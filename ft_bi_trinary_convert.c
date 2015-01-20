@@ -1,36 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_binary_convert.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 10:22:44 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 09:07:03 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/12 02:37:38 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/20 12:53:10 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdlib.h>
 
-char	*ft_strchr(char *s, int c)
+char	*ft_bi_trinary(uintmax_t arg, char c)
 {
-	char	t;
-	size_t	i;
-	char	*tp;
+	char		*bin;
+	intmax_t	tp;
+	int			nb;
 
-	i = 0;
-	t = (char)c;
-	tp = (char *)s;
-	if (tp)
+	if (c == 'b')
+		nb = 2;
+	else
+		nb = 3;
+	while (arg > 0)
 	{
-		while (i < (ft_strlen(tp) + 1))
-		{
-			if (tp[i] == t)
-				return (&tp[i]);
-			i++;
-		}
-		if (t == 0)
-			return ((char *)s);
+		tp = (arg % nb) + '0';
+		arg /= nb;
+		if (arg > 0)
+			tp *= 10;
 	}
-	return (NULL);
+	bin = ft_itoa(tp);
+	return (bin);
 }

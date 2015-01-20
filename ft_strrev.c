@@ -1,36 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrev.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
+/*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2014/11/05 10:22:44 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 09:07:03 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/12 01:02:39 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/12 02:28:22 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+#include <stdlib.h>
 
-char	*ft_strchr(char *s, int c)
+char	*ft_strrev(char *s)
 {
-	char	t;
-	size_t	i;
-	char	*tp;
+	char	*res;
+	int		i;
+	int		j;
+	int		len;
 
 	i = 0;
-	t = (char)c;
-	tp = (char *)s;
-	if (tp)
-	{
-		while (i < (ft_strlen(tp) + 1))
-		{
-			if (tp[i] == t)
-				return (&tp[i]);
-			i++;
-		}
-		if (t == 0)
-			return ((char *)s);
-	}
-	return (NULL);
+	len = ft_strlen(s);
+	res = (char *)malloc(sizeof(char) * len + 1);
+	j = len - 1;
+	while (j >= 0)
+		res[i++] = s[j--];
+	res[len] = 0;
+	return (res);
 }

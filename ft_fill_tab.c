@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:56:19 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 11:15:57 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/20 11:54:15 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ int		*fill_uiflags(int *tab, char *fmt)
 	return (tab);
 }
 
-int		*tab_vflags(int *tab, char *fmt)
+int		*fill_vflags(int *tab, char *fmt)
 {
 	ft_bzero(tab, 2);
 	while (*fmt != '%')
