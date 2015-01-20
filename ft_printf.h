@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 14:45:16 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/20 15:38:16 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,5 +53,13 @@ char		*ft_hexa(uintmax_t arg);
 char		*ft_ui_conversions(uintmax_t arg, char *put, char *fmt);
 char		*ft_i_conversions(intmax_t arg, char *put, char *fmt);
 char		*ft_troncate(char *put, char *fmt);
+char		*ft_i_sflags(char *put, int *tab, char *fmt);
+char		*ft_ui_sflags(char *put, int *tab, char *fmt);
+char		*ft_v_sflags(char *put, int *tab, char *fmt);
+char		*to_print(int width, char *conv, char c);
+char		*ft_align(char *put, char *fmt, char c);
+char		*ft_sharpo(char *put);
+char		*ft_sharpx(char *put);
+char		*ft_add_bef(char *put, char c);
 
 #endif
