@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:58:26 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 11:49:46 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/20 14:26:58 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,11 +52,11 @@ int		ft_printf(const char *format, ...)
 		while (*s2++)
 		{
 			if (is_convers_flag(*s2) == 1)
-				ct += ft_treat_int(s2, va_arg(ap, intmax_t));
+				ct += ft_treat_int(s2 - 1, va_arg(ap, intmax_t));
 			else if (is_convers_flag(*s2) == 2)
-				ct += ft_treat_uint(s2, va_arg(ap, uintmax_t));
+				ct += ft_treat_uint(s2 - 1, va_arg(ap, uintmax_t));
 			else if (is_convers_flag(*s2) == 3)
-				ct += ft_treat_void(s2, va_arg(api, void *));
+				ct += ft_treat_void(s2 - 1, va_arg(api, void *));
 		}
 		ct += ft_print_cut(&s1);
 	}

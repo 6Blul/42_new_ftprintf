@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 12:36:59 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/20 14:49:07 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,11 +49,20 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 		put = ft_uintmaxtoa(arg);
 	else
 	{
-		// chercher les flags de conversion
-		// gerer la precision si tab[0] = 0
-		// s'il reste quelque chose (precision > 0) -> appliquer les autres flags
+		while (is_let_flag(*fmt))
+		{
+			put = ft_ui_conversions(arg, put, fmt);
+			*fmt--;
+		}
+		if (tab[0] == 0)
+			put = ft_troncate(put, fmt);
+		if (put != NULL)
+			put = ft_ui_sflags(put, tab, fmt);
+		else
+			return (0);
 	}
-	// Afficher put, return la longueur de put.
+	ft_putstr(put);
+	return (ft_strlen(put));
 }
 
 int		ft_treat_void(char *fmt, void *arg)
