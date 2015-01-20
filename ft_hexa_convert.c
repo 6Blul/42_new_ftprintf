@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/12 02:05:53 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 12:56:09 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/20 13:19:03 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ char	*ft_hexa(uintmax_t arg)
 	int		nb;
 
 	i = 0;
-	tp = ft_uinmaxtoa((uintmax_t)arg);
+	tp = ft_uinmaxtoa(arg);
 	len = ft_strlen(tp);
 	new = (char *)malloc(sizeof(char) * len + 1);
 	while (arg > 0)

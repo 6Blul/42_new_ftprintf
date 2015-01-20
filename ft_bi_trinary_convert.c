@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/12 02:37:38 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 12:53:10 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/20 13:19:18 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,6 @@ char	*ft_bi_trinary(uintmax_t arg, char c)
 		if (arg > 0)
 			tp *= 10;
 	}
-	bin = ft_itoa(tp);
+	bin = ft_maxtoa(tp);
 	return (bin);
 }

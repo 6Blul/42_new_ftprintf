@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/12 01:48:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 12:53:35 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/20 13:18:56 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_octal(uintmax_t arg)
 	int		len;
 
 	i = 0;
-	tp = ft_uinmaxtoa((uintmax_t)arg);
+	tp = ft_uinmaxtoa(arg);
 	len = ft_strlen(tp);
 	new = (char *)malloc(sizeof(char) * len + 1);
 	while (arg > 0)
