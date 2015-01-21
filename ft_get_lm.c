@@ -1,34 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_troncate.c                                      :+:      :+:    :+:   */
+/*   ft_get_lm.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 09:51:16 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/21 10:00:38 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/21 10:15:36 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_troncate(char *put, char *fmt)
+int		ft_get_lm(char *fmt)
 {
-	char	*pre;
-	int		nb;
-	int		i;
+	int		lm;
 
-	i = 0;
-	while (*fmt != '.' || fmt != '%')
+	while (*fmt != '%')
 		*fmt--;
-	if (!ft_isdigit(*fmt + 1) || *fmt == '%')
-		return (put);
-	nb = ft_atoi(fmt);
-	if (nb == 0)
-		return (NULL);
-	pre = (char *)malloc(sizeof(char) * nb + 1);
-	while (i < nb)
-		pre[i++] = *put++;
-	pre[i] = 0;
-	return (pre);
+	while (!ft_isdigit(*fmt) && *fmt)
+		*fmt++;
+	if (*fmt == 0)
+		return (0);
+	lm = ft_atoi(fmt);
+	return (lm);
 }

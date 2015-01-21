@@ -1,34 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_troncate.c                                      :+:      :+:    :+:   */
+/*   ft_get_precision.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 09:51:16 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/21 09:48:19 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/21 09:52:49 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_troncate(char *put, char *fmt)
+int		ft_get_precision(char *fmt)
 {
-	char	*pre;
 	int		nb;
-	int		i;
 
-	i = 0;
-	while (*fmt != '.' || fmt != '%')
+	while (*fmt != '.' || *fmt != '%')
 		*fmt--;
 	if (!ft_isdigit(*fmt + 1) || *fmt == '%')
-		return (put);
+		return (ft_strlen(fmt));
 	nb = ft_atoi(fmt);
-	if (nb == 0)
-		return (NULL);
-	pre = (char *)malloc(sizeof(char) * nb + 1);
-	while (i < nb)
-		pre[i++] = *put++;
-	pre[i] = 0;
-	return (pre);
+	return (nb);
 }

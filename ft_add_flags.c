@@ -6,12 +6,11 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 09:10:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 15:39:17 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/21 09:54:10 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdlib.h>
 
 char	*ft_add_bef(char *put, char c)
 {

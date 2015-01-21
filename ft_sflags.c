@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:50:51 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 09:36:32 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/21 10:17:44 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ char	*ft_i_sflags(char *put, int *tab, char *fmt)
 	if (tab[1] == 1)
 		put = ft_add_bef(put, '+');
 	else if (tab[2] == 1)
-		put  = ft_add_bef(put, ' ');
+		put = ft_add_bef(put, ' ');
 	if (tab[3] == 1)
 	{
 		if (tab[4] == 1)
@@ -40,7 +40,7 @@ char	*ft_ui_sflags(char *put, int *tab, char *fmt)
 	if (tab[1] == 1)
 		put = ft_add_bef(put, '+');
 	else if (tab[2] == 1)
-		put  = ft_add_bef(put, ' ');
+		put = ft_add_bef(put, ' ');
 	if (tab[3] == 1 && (*temp == 'o' || *temp == 'O'))
 		put = ft_sharpo(put);
 	if (tab[3] == 1 && (*temp == 'x' || *temp == 'X'))
