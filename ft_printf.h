@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 15:38:16 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/21 08:06:38 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,12 +41,12 @@ char		*ft_maxtoa(intmax_t n);
 short		ft_h_i(intmax_t arg);
 signed char	ft_hh_i(intmax_t arg);
 long		ft_l_i(intmax_t arg);
-long long	ft_l_l_i(intmax_t arg);
+long long	ft_ll_i(intmax_t arg);
 size_t		ft_z_i(intmax_t arg);
 char		*ft_h_ui(uintmax_t arg, char c);
 char		*ft_hh_ui(uintmax_t arg, char c);
 char		*ft_l_ui(uintmax_t arg, char c);
-char		*ft_l_l_ui(uintmax_t arg, char c);
+char		*ft_ll_ui(uintmax_t arg, char c);
 char		*ft_z_ui(uintmax_t arg, char c);
 char		*ft_base_convert(uintmax_t arg, char c);
 char		*ft_hexa(uintmax_t arg);

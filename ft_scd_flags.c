@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/04 22:57:16 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 13:55:18 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/21 07:54:12 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ char		*ft_l_ui(uintmax_t arg, char c)
 		return (ft_uintmaxtoa((unsigned long)arg));
 }
 
-char		*ft_l_l_ui(uintmax_t arg, char c)
+char		*ft_ll_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
 		return (ft_hexa((unsigned long long)arg));

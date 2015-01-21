@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 14:49:07 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/21 09:39:03 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,25 @@ int		ft_treat_int(char *fmt, intmax_t arg)
 	tab = fill_iflags(tab, fmt, arg);
 	if (*fmt - 1 == '%' && !is_wchar(fmt))
 		put = ft_maxtoa(arg);
+	else if (is_wchar(fmt))
+		return (ft_treat_wchar(*fmt, (wchar_t)arg, tab, 0));
 	// ou si wchar -> traiter w_char (et return direct apres la valeur de retour du treat)
+	else
+	{
+		while (is_let_flag(*fmt))
+		{
+			put = ft_i_conversions(arg, put, fmt);
+			*fmt--;
+		}
+		if (tab[0] == 0)
+			put = ft_troncate(put, fmt);
+		if (put)
+			put = ft_i_sflags(put, tab, fmt);
+		else
+			return (0);
+	}
+	ft_putstr(put);
+	return (ft_strlen(put));
 	// ou sinon :
 	// - chercher les flags de conversion
 	// - gerer la precision si tab[0] = 0
@@ -57,7 +75,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 		if (tab[0] == 0)
 			put = ft_troncate(put, fmt);
 		if (put != NULL)
-			put = ft_ui_sflags(put, tab, fmt);
+			put = ft_ui_sflags(arg, put, tab, fmt);
 		else
 			return (0);
 	}

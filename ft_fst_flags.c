@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/04 22:53:19 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/10 00:10:28 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/21 07:54:05 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ long		ft_l_i(intmax_t arg)
 	return ((long)arg);
 }
 
-long long	ft_l_l_i(intmax_t arg)
+long long	ft_ll_i(intmax_t arg)
 {
 	return ((long long)arg);
 }
