@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 10:12:53 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/22 04:50:22 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,6 +65,7 @@ void		ft_putwchar(int *tab);
 int			ft_get_precision(char *fmt);
 int			ft_get_lm(char *fmt);
 int			ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st);
+int			ft_treat_wstr(char *fmt, int *tab, wchar_t *arg);
 int			*ft_split_bits(char *bits);
 void		ft_adjust(int lm);
 

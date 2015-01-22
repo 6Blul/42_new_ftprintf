@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 10:17:59 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/22 05:30:51 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,7 @@ int		ft_treat_int(char *fmt, intmax_t arg)
 			put = ft_i_conversions(arg, put, fmt);
 			*fmt--;
 		}
-		if (tab[0] == 0)
+		if (tab[0] == 1)
 			put = ft_troncate(put, fmt);
 		if (put)
 			put = ft_i_sflags(put, tab, fmt);
@@ -66,9 +66,9 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 			put = ft_ui_conversions(arg, put, fmt);
 			*fmt--;
 		}
-		if (tab[0] == 0)
+		if (tab[0] == 1)
 			put = ft_troncate(put, fmt);
-		if (put != NULL)
+		if (put)
 			put = ft_ui_sflags(arg, put, tab, fmt);
 		else
 			return (0);
@@ -83,12 +83,22 @@ int		ft_treat_void(char *fmt, void *arg)
 
 	tab = (int *)malloc(sizeof(int) * 3);
 	tab = fill_vflags(tab, fmt);
-	// S'il n'y a qu'un %s -> put = ft_strdup((char *)arg);
-	// Ou si wstr -> traiter wstr (return le nb de caracteres ecrits et la return directement)
+	if (is_wstr(fmt))
+		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
+	else if (*fmt == 'p')
+		ft_treat_void(fmt, tab, (void *)arg);
 	// Ou si void -> traiter void (return dans put)
-	// Sinon :
-	// - Mettre le char * dans put.
-	// - Gerer la precision si tab[0] == 0
-	// - Gerer les autres flags (si precision > 0)
-	// Afficher put, return la longueur de put.
+	else
+	{
+		put = ft_strdup((char *)arg);
+		if (*fmt - 1 != '%')
+		{
+			if (tab[0] == 1)
+				put = ft_troncate(put, fmt);
+			if (put)
+				put = ft_v_sflags(put, tab, fmt);
+		}
+	}
+	ft_putstr(put);
+	return (ft_strlen(put));
 }

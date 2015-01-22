@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:50:51 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 10:17:44 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/22 05:29:41 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,5 +59,12 @@ char	*ft_ui_sflags(char *put, int *tab, char *fmt)
 
 char	*ft_v_sflags(char *put, int *tab, char *fmt)
 {
-
+	if (tab[1] == 1)
+	{
+		if (tab[2] == 1)
+			put = ft_align(put, fmt, 'l');
+		else
+			put = ft_align(put, fmt, ' ');
+	}
+	return (put);
 }
