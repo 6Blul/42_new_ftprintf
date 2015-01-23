@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/22 04:50:22 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/23 20:31:50 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ char		*ft_base_convert(uintmax_t arg, char c);
 char		*ft_hexa(uintmax_t arg);
 char		*ft_ui_conversions(uintmax_t arg, char *put, char *fmt);
 char		*ft_i_conversions(intmax_t arg, char *put, char *fmt);
-char		*ft_troncate(char *put, char *fmt);
+char		*ft_treat_prec(char *put, char *fmt, int type);
 char		*ft_i_sflags(char *put, int *tab, char *fmt);
 char		*ft_ui_sflags(char *put, int *tab, char *fmt);
 char		*ft_v_sflags(char *put, int *tab, char *fmt);
@@ -68,5 +68,8 @@ int			ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st);
 int			ft_treat_wstr(char *fmt, int *tab, wchar_t *arg);
 int			*ft_split_bits(char *bits);
 void		ft_adjust(int lm);
+char		*ft_treat_void(char *fmt, int *tab, void *arg);
+char		*ft_treat_preint(int nb, char *pre, char *put);
+char		*ft_treat_prestr(int nb, char *pre, char *put);
 
 #endif

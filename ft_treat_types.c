@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/22 05:30:51 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/23 20:08:01 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int		ft_treat_int(char *fmt, intmax_t arg)
 			*fmt--;
 		}
 		if (tab[0] == 1)
-			put = ft_troncate(put, fmt);
+			put = ft_treat_prec(put, fmt, 0);
 		if (put)
 			put = ft_i_sflags(put, tab, fmt);
 		else
@@ -63,11 +63,11 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 	{
 		while (is_let_flag(*fmt))
 		{
-			put = ft_ui_conversions(arg, put, fmt);
+			put = ft_ui_conversions(arg, put, fmt, 0);
 			*fmt--;
 		}
 		if (tab[0] == 1)
-			put = ft_troncate(put, fmt);
+			put = ft_treat_prec(put, fmt);
 		if (put)
 			put = ft_ui_sflags(arg, put, tab, fmt);
 		else
@@ -86,15 +86,14 @@ int		ft_treat_void(char *fmt, void *arg)
 	if (is_wstr(fmt))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')
-		ft_treat_void(fmt, tab, (void *)arg);
-	// Ou si void -> traiter void (return dans put)
+		put = ft_treat_void(fmt, tab, (void *)arg);
 	else
 	{
 		put = ft_strdup((char *)arg);
 		if (*fmt - 1 != '%')
 		{
 			if (tab[0] == 1)
-				put = ft_troncate(put, fmt);
+				put = ft_treat_prec(put, fmt, 1);
 			if (put)
 				put = ft_v_sflags(put, tab, fmt);
 		}
