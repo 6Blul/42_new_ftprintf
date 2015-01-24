@@ -6,13 +6,13 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/05 11:21:48 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 08:06:43 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:10:09 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_isdigit(int c)
+int		ft_isdigit(char c)
 {
 	return (c >= 48 && c <= 57);
 }

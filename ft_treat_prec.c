@@ -6,11 +6,32 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 01:10:53 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 01:49:41 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	*ft_treat_hexa(int nb, char *pre, char *put)
+{
+	int		i;
+	int		j;
+	int		len;
+	int		zer;
+
+	i = 2;
+	j = 2;
+	len = ft_strlen(put) - 2;
+	zer = nb - len;
+	pre[0] = '0';
+	pre[1] = 'x';
+	while (i < (zer + 2))
+		pre[i++] = '0';
+	while (put[j])
+		pre[i++] = put[j++];
+	pre[i] = 0;
+	return (pre);
+}
 
 char	*ft_treat_preint(int nb, char *pre, char *put)
 {
@@ -75,5 +96,7 @@ char	*ft_treat_prec(char *put, char *fmt, int type)
 		else
 			pre = ft_treat_prestr(nb, pre, put);
 	}
+	else if (type == 2)
+		pre = ft_treat_hexa(nb, pre, put);
 	return (pre);
 }

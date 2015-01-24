@@ -6,15 +6,15 @@
 /*   By: spochez <marvin@42.fr>                     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/11/04 13:19:47 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 08:29:33 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:01:32 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-size_t		ft_strlen(char *s)
+int		ft_strlen(char *s)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
 	if (s)

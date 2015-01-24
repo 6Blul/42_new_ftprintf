@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/23 20:08:01 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:20:02 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,13 +25,14 @@ int		is_wstr(char *c)
 int		ft_treat_int(char *fmt, intmax_t arg)
 {
 	int		*tab;
+	char	*put;
 
 	tab = (int *)malloc(sizeof(int) * 6);
 	tab = fill_iflags(tab, fmt, arg);
 	if (*fmt - 1 == '%' && !is_wchar(fmt))
 		put = ft_maxtoa(arg);
 	else if (is_wchar(fmt))
-		return (ft_treat_wchar(*fmt, (wchar_t)arg, tab, 0));
+		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
 	else
 	{
 		while (is_let_flag(*fmt))
@@ -55,21 +56,23 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 	int		*tab;
 	char	*put;
 
-	tab = (int *)malloc(sizeof(int) * 7);
+	tab = (int *)malloc(sizeof(int) * 8);
+	if (*fmt == 'x' || *fmt == 'X')
+		tab[7] = 2;
 	tab = fill_uiflags(tab, fmt);
 	if (*fmt - 1 == '%')
-		put = ft_uintmaxtoa(arg);
+		put = ft_uinmaxtoa(arg);
 	else
 	{
 		while (is_let_flag(*fmt))
 		{
-			put = ft_ui_conversions(arg, put, fmt, 0);
+			put = ft_ui_conversions(arg, put, fmt);
 			*fmt--;
 		}
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, fmt);
+			put = ft_treat_prec(put, fmt, tab[7]);
 		if (put)
-			put = ft_ui_sflags(arg, put, tab, fmt);
+			put = ft_ui_sflags(put, tab, fmt);
 		else
 			return (0);
 	}
@@ -80,13 +83,14 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 int		ft_treat_void(char *fmt, void *arg)
 {
 	int		*tab;
+	char	*put;
 
 	tab = (int *)malloc(sizeof(int) * 3);
 	tab = fill_vflags(tab, fmt);
 	if (is_wstr(fmt))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')
-		put = ft_treat_void(fmt, tab, (void *)arg);
+		put = ft_convers_void(fmt, tab, (void *)arg);
 	else
 	{
 		put = ft_strdup((char *)arg);

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 09:10:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 09:54:10 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:08:22 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,7 +108,7 @@ char	*ft_align(char *put, char *fmt, char c)
 	int		j;
 
 	j = 0;
-	num = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	num = (char *)malloc(sizeof(char) * ft_strlen(put) + 1);
 	while (!ft_isdigit(*fmt))
 		*fmt++;
 	while (ft_isdigit(*fmt))

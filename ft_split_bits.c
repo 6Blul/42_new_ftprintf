@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/13 04:29:32 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/14 04:13:58 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:03:11 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ int		ft_define_tab(char *bits)
 int		*ft_split_bits(char *bits)
 {
 	char	**res;
-	int		*bins;
+	int		*bin;
 	int		nb;
 	int		i;
 
@@ -69,6 +69,6 @@ int		*ft_split_bits(char *bits)
 	bin = (int *)malloc(sizeof(int) * nb + 1);
 	ft_fill_tab(res, nb, bits);
 	while (res[i])
-		bins[i++] = ft_atoi(res[i++]);
-	return (bins);
+		bin[i++] = ft_atoi(res[i++]);
+	return (bin);
 }

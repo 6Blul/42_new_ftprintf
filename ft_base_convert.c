@@ -6,12 +6,11 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/12 02:37:38 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 14:46:50 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:18:20 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <stdlib.h>
 
 char	*ft_base_convert(uintmax_t arg, char c)
 {
