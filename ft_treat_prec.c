@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/23 20:32:02 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 01:10:53 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,30 @@
 
 char	*ft_treat_preint(int nb, char *pre, char *put)
 {
+	int		i;
+	int		len;
+	int		zer;
 
+	i = 0;
+	len = ft_strlen(put);
+	zer = nb - len;
+	while (i < zer)
+		pre[i++] = '0';
+	while (*put)
+		pre[i++] = *put++;
+	pre[i] = 0;
+	return (pre);
 }
 
 char	*ft_treat_prestr(int nb, char *pre, char *put)
 {
+	int		i;
 
+	i = 0;
+	while (i <= nb && put[i])
+		pre[i++] = put[i++];
+	pre[i] = 0;
+	return (pre);
 }
 
 int		ft_get_precision(char *fmt)
