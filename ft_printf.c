@@ -6,59 +6,61 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:58:26 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:55:44 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 03:47:13 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_print_cut(char **s)
+int		ft_written_char(char *s)
 {
-	int		nb;
-	int		ct;
+	int		i;
 
-	nb = 0;
-	ct = 0;
-	while (**s && **s != '%')
-	{
-		ft_putchar(**s++);
-		ct++;
-	}
-	while (!is_convers_flag(**s))
-	{
-		nb++;
-		(**s)++;
-	}
-	if (*s + (ct + nb + 1))
-		*s = ft_strdup(*s + (ct + nb + 1));
+	i = 0;
+	while (s[i] != '%')
+		ft_putchar(s[i++]);
+	return (i);
+}
+
+char	*ft_print_cut(char *s)
+{
+	int		i;
+	char	*res;
+
+	i = 0;
+	printf("troncate1\n");
+	while (s[i] && s[i] != '%')
+		i++;
+	while (!is_convers_flag(s[i]))
+		i++;
+	s[i - 1] = 0;
+	if (s[i])
+		res = ft_strdup(s);
 	else
-		*s = NULL;
-	return (ct);
+		return (NULL);
+	printf("troncate2\n");
+	return (res);
 }
 
 int		ft_printf(const char *format, ...)
 {
 	va_list		ap;
-	char		*s1;
-	char		*s2;
+	char		*s;
 	int			ct;
 
 	va_start(ap, format);
 	ct = 0;
-	s1 = ft_strdup((char *)format);
-	while (*s1)
+	s = ft_strdup((char *)format);
+	while ((*s)++)
 	{
-		s2 = ft_strchr(s1, '%');
-		while ((*s2)++)
-		{
-			if (is_convers_flag(*s2) == 1)
-				ct += ft_treat_int(s2 - 1, va_arg(ap, intmax_t));
-			else if (is_convers_flag(*s2) == 2)
-				ct += ft_treat_uint(s2 - 1, va_arg(ap, uintmax_t));
-			else if (is_convers_flag(*s2) == 3)
-				ct += ft_treat_void(s2 - 1, va_arg(ap, void *));
-		}
-		ct += ft_print_cut(&s1);
+		ct += ft_written_char(s);
+		if (is_convers_flag(*s) == 1)
+			ct += ft_treat_int(s - 1, va_arg(ap, intmax_t));
+		else if (is_convers_flag(*s) == 2)
+			ct += ft_treat_uint(s - 1, va_arg(ap, uintmax_t));
+		else if (is_convers_flag(*s) == 3)
+			ct += ft_treat_void(s - 1, va_arg(ap, void *));
+		s = ft_print_cut(s);
 	}
 	va_end(ap);
 	return (ct);

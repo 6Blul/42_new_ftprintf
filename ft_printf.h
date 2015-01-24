@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:22:02 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 03:11:58 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,9 +17,11 @@
 # include <unistd.h>
 # include <wchar.h>
 # include <stdarg.h>
+# include <stdio.h>
 
 int			ft_printf(const char *format, ...);
-int			ft_print_cut(char **s);
+char		*ft_print_cut(char *s);
+int			ft_written_char(char *s);
 int			ft_atoi(char *str);
 int			ft_strlen(char *s);
 int			ft_isdigit(char c);
