@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 09:36:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:42:08 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 23:28:34 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,8 +43,10 @@ void	ft_putwchar(int *tab)
 	while (tab[j])
 		j++;
 	while (tab[i])
+	{
 		write(1, &tab[i], j);
 		i++;
+	}
 }
 
 int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)

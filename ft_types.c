@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 09:41:55 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 03:15:57 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 23:09:54 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int		is_sign_flag(char c)
 {
-	if (ft_strchr("#0 +-.", (int)c) != NULL)
+	if (ft_strchr("#0 +-.123456789", (int)c) != NULL)
 		return (1);
 	return (0);
 }
