@@ -1,27 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_lm.c                                        :+:      :+:    :+:   */
+/*   main.c                                             :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/21 10:00:38 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:53:07 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/24 02:42:41 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/24 02:43:16 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_get_lm(char *fmt)
+int		main(void)
 {
-	int		lm;
+	char	*str;
 
-	while (*fmt != '%')
-		(*fmt)--;
-	while (!ft_isdigit(*fmt) && *fmt)
-		(*fmt)++;
-	if (*fmt == 0 || *fmt - 1 == '.')
-		return (0);
-	lm = ft_atoi(fmt);
-	return (lm);
+	str = "Bonjour";
+	ft_printf("%s", str);
+	return (0);
 }

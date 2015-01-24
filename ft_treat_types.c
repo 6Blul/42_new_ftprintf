@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:20:02 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:54:01 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ int		ft_treat_int(char *fmt, intmax_t arg)
 		while (is_let_flag(*fmt))
 		{
 			put = ft_i_conversions(arg, put, fmt);
-			*fmt--;
+			(*fmt)--;
 		}
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, fmt, 0);
@@ -67,7 +67,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 		while (is_let_flag(*fmt))
 		{
 			put = ft_ui_conversions(arg, put, fmt);
-			*fmt--;
+			(*fmt)--;
 		}
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, fmt, tab[7]);

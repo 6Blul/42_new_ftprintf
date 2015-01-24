@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:58:26 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:07:09 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:55:44 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int		ft_print_cut(char **s)
 	while (!is_convers_flag(**s))
 	{
 		nb++;
-		**s++;
+		(**s)++;
 	}
 	if (*s + (ct + nb + 1))
 		*s = ft_strdup(*s + (ct + nb + 1));
@@ -49,7 +49,7 @@ int		ft_printf(const char *format, ...)
 	while (*s1)
 	{
 		s2 = ft_strchr(s1, '%');
-		while (*s2++)
+		while ((*s2)++)
 		{
 			if (is_convers_flag(*s2) == 1)
 				ct += ft_treat_int(s2 - 1, va_arg(ap, intmax_t));

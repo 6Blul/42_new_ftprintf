@@ -6,11 +6,21 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/21 09:36:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:23:09 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:42:08 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+int		ft_strwlen(wchar_t *s)
+{
+	int		i;
+
+	i = 0;
+	while (s[i])
+		i++;
+	return (i);
+}
 
 void	ft_adjust(int lm)
 {
@@ -19,7 +29,7 @@ void	ft_adjust(int lm)
 	i = 1;
 	while (i < (lm - 1))
 	{
-		write(1, ' ', 1);
+		ft_putchar(' ');
 		i++;
 	}
 }
@@ -30,12 +40,11 @@ void	ft_putwchar(int *tab)
 	int		j;
 
 	i = 0;
-	j = 1;
+	while (tab[j])
+		j++;
 	while (tab[i])
-	{
-		write(1, &tab[i], 1);
+		write(1, &tab[i], j);
 		i++;
-	}
 }
 
 int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)
@@ -76,10 +85,10 @@ int		ft_treat_wstr(char *fmt, int *tab, wchar_t *arg)
 	lm = ft_get_lm(fmt);
 	j = 0;
 	if (tab[1] == 1 && tab[2] == 0)
-		ft_adjust(lm - ft_strlen(arg));
+		ft_adjust(lm - ft_strwlen(arg));
 	while (j <= pre)
 		ft_treat_wchar(fmt, arg[j++], tab, 1);
 	if (tab[1] == 1 && tab[2] == 1)
-		ft_adjust(lm - ft_strlen(arg));
+		ft_adjust(lm - ft_strwlen(arg));
 	return (lm);
 }

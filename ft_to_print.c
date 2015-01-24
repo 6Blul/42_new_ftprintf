@@ -6,14 +6,14 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/23 14:04:45 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 15:36:39 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:49:31 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_printf.h"
 
-char	*put_blanks(char *s, int spaces, int len, char *ret)
+char	*put_blanks(char *s, int spaces, char *ret)
 {
 	int		i;
 	int		j;
@@ -28,7 +28,7 @@ char	*put_blanks(char *s, int spaces, int len, char *ret)
 	return (ret);
 }
 
-char	*put_zeros(char *s, int spaces, int len, char *ret)
+char	*put_zeros(char *s, int spaces, char *ret)
 {
 	int		i;
 	int		j;
@@ -55,9 +55,9 @@ char	*to_print(int width, char *conv, char c)
 	else
 	{
 		if (c == ' ')
-			ret = put_blanks(conv, (width - len + 1), width, ret);
+			ret = put_blanks(conv, width, ret);
 		else if (c == '0')
-			ret = put_zeros(conv, (width - len + 1), width, ret);
+			ret = put_zeros(conv, width, ret);
 	}
 	return (ret);
 }

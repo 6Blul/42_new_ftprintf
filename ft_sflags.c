@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:50:51 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/22 05:29:41 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/24 02:55:24 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_ui_sflags(char *put, int *tab, char *fmt)
 
 	temp = fmt;
 	while (is_convers_flag(*temp) != 2)
-		*temp++;
+		(*temp)++;
 	if (tab[1] == 1)
 		put = ft_add_bef(put, '+');
 	else if (tab[2] == 1)
