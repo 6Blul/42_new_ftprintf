@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:58:26 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 05:19:14 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 05:52:41 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,11 +32,11 @@ char	*ft_cut_fmt(char *s)
 
 	j = 0;
 	s = ft_go_to(s);
-	s = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
-	while (*res)
-		s[j++] = *(res++);
-	s[j] = 0;
-	return (s);
+	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
+	while (*s)
+		res[j++] = *(s++);
+	res[j] = 0;
+	return (res);
 }
 
 int		ft_printf(const char *format, ...)
@@ -60,7 +60,6 @@ int		ft_printf(const char *format, ...)
 			else if (is_convers_flag(*s) == 3)
 				ct += ft_treat_void(s - 1, va_arg(ap, void *));
 			s = ft_cut_fmt(s);
-			printf("[%s]\n", s);
 		}
 		else
 			ct = ft_written_char(*(s++), ct);
