@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:54:01 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 02:53:31 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,12 +14,12 @@
 
 int		is_wchar(char *c)
 {
-	return (*c == 'C' || (*c == 'c' && *c - 1 == 'l'));
+	return (*c == 'C' || (*c == 'c' && *(c - 1) == 'l'));
 }
 
 int		is_wstr(char *c)
 {
-	return (*c == 'S' || (*c == 's' && *c - 1 == 'l'));
+	return (*c == 'S' || (*c == 's' && *(c - 1) == 'l'));
 }
 
 int		ft_treat_int(char *fmt, intmax_t arg)
@@ -29,7 +29,7 @@ int		ft_treat_int(char *fmt, intmax_t arg)
 
 	tab = (int *)malloc(sizeof(int) * 6);
 	tab = fill_iflags(tab, fmt, arg);
-	if (*fmt - 1 == '%' && !is_wchar(fmt))
+	if (*(fmt - 1) == '%' && !is_wchar(fmt))
 		put = ft_maxtoa(arg);
 	else if (is_wchar(fmt))
 		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
@@ -60,7 +60,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 	if (*fmt == 'x' || *fmt == 'X')
 		tab[7] = 2;
 	tab = fill_uiflags(tab, fmt);
-	if (*fmt - 1 == '%')
+	if (*(fmt - 1) == '%')
 		put = ft_uinmaxtoa(arg);
 	else
 	{
@@ -94,7 +94,7 @@ int		ft_treat_void(char *fmt, void *arg)
 	else
 	{
 		put = ft_strdup((char *)arg);
-		if (*fmt - 1 != '%')
+		if (*(fmt - 1) != '%')
 		{
 			if (tab[0] == 1)
 				put = ft_treat_prec(put, fmt, 1);

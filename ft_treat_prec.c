@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:55:11 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 02:52:09 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,7 +70,7 @@ int		ft_get_precision(char *fmt)
 
 	while (*fmt != '.' || *fmt != '%')
 		(*fmt)--;
-	if (*fmt == '%' || !ft_isdigit(*fmt + 1))
+	if (*fmt == '%' || !ft_isdigit(*(fmt + 1)))
 		return (0);
 	nb = ft_atoi(fmt);
 	return (nb);
