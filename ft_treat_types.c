@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 10:41:19 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 11:47:33 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,12 +56,14 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 	int		*tab;
 	char	*put;
 
-	//printf("\nOo>[%s]<oO\n", fmt);
+	/*printf("\nOo>[%s]<oO\n", fmt);
+	printf("\nCc>[%s]<cC\n", copy);*/
 	tab = (int *)malloc(sizeof(int) * 8);
-	//printf("C1 : [%c]\n", *fmt);
-	//printf("C1bis : [%c]\n", *(fmt - 1));
+	/*printf("C1 : [%c]\n", *fmt);
+	printf("C1bis : [%c]\n", *(fmt - 1));*/
 	if (*fmt == 'x' || *fmt == 'X' || *fmt == 'o' || *fmt == 'O')
 		tab[7] = 2;
+	//printf("Tab7 = [%i]\n", tab[7]);
 	tab = fill_uiflags(tab, copy);
 	//printf("C2 : [%c]\n", *fmt);
 	//printf("-->[%s]<--\n", fmt);

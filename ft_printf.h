@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 10:38:39 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 11:54:00 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@
 # include <stdio.h>
 
 int			ft_printf(const char *format, ...);
-char		*ft_full_fmt(const char *fmt);
+char		*ft_full_fmt(char *s);
 char		*ft_go_to(char *s);
 char		*ft_cut_fmt(char *s);
 int			ft_written_char(char s, int ct);

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:56:19 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 02:48:55 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 10:58:47 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int		*fill_iflags(int *tab, char *fmt, intmax_t arg)
 {
 	ft_bzero(tab, 5);
-	while (*fmt != '%')
+	while (is_convers_flag(*fmt) == 0)
 	{
 		if (*fmt == '.')
 			tab[0] = 1;
@@ -29,7 +29,7 @@ int		*fill_iflags(int *tab, char *fmt, intmax_t arg)
 			tab[4] = 1;
 		if (*fmt == '0')
 			tab[5] = 1;
-		(*fmt)--;
+		(*fmt)++;
 	}
 	if (tab[1] == 1 && tab[2] == 1)
 		tab[2] = 0;
@@ -41,7 +41,7 @@ int		*fill_iflags(int *tab, char *fmt, intmax_t arg)
 int		*fill_uiflags(int *tab, char *fmt)
 {
 	ft_bzero(tab, 6);
-	while (*fmt != '%')
+	while (is_convers_flag(*fmt) == 0)
 	{
 		if (*fmt == '.')
 			tab[0] = 1;
@@ -57,7 +57,7 @@ int		*fill_uiflags(int *tab, char *fmt)
 			tab[5] = 1;
 		if (*fmt == '0')
 			tab[6] = 1;
-		(*fmt)--;
+		(*fmt)++;
 	}
 	if (tab[1] == 1 && tab[2] == 1)
 		tab[2] = 0;
@@ -69,7 +69,7 @@ int		*fill_uiflags(int *tab, char *fmt)
 int		*fill_vflags(int *tab, char *fmt)
 {
 	ft_bzero(tab, 2);
-	while (*fmt != '%')
+	while (is_convers_flag(*fmt) == 0)
 	{
 		if (*fmt == '.')
 			tab[0] = 1;
@@ -77,7 +77,7 @@ int		*fill_vflags(int *tab, char *fmt)
 			tab[1] = 1;
 		if (*fmt == '-')
 			tab[2] = 1;
-		(*fmt)--;
+		(*fmt)++;
 	}
 	return (tab);
 }
