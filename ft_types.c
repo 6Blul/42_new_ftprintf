@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 09:41:55 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 09:34:49 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 13:23:19 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ int		is_convers_flag(char c)
 		nb = 1;
 	if (ft_strchr("oOuUxXbt", (int)c) != NULL)
 		nb = 2;
-	if (ft_strchr("sSp%", (int)c) != NULL)
+	if (ft_strchr("sSp", (int)c) != NULL)
 		nb = 3;
 	return (nb);
 }

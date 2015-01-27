@@ -6,21 +6,23 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/23 14:04:45 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:49:31 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 14:13:45 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_printf.h"
 
-char	*put_blanks(char *s, int spaces, char *ret)
+char	*put_blanks(char *s, int spaces, char *ret, int len)
 {
 	int		i;
 	int		j;
+	int		nb;
 
 	i = 0;
 	j = 0;
-	while (i <= spaces)
+	nb = spaces - len;
+	while (i <= nb)
 		ret[i++] = ' ';
 	while (s[j])
 		ret[i++] = s[j++];
@@ -28,14 +30,16 @@ char	*put_blanks(char *s, int spaces, char *ret)
 	return (ret);
 }
 
-char	*put_zeros(char *s, int spaces, char *ret)
+char	*put_zeros(char *s, int spaces, char *ret, int len)
 {
 	int		i;
 	int		j;
+	int		nb;
 
 	i = 0;
 	j = 0;
-	while (i <= spaces)
+	nb = spaces - len;
+	while (i <= nb)
 		ret[i++] = '0';
 	while (s[j])
 		ret[i++] = s[j++];
@@ -55,9 +59,9 @@ char	*to_print(int width, char *conv, char c)
 	else
 	{
 		if (c == ' ')
-			ret = put_blanks(conv, width, ret);
+			ret = put_blanks(conv, width, ret, len);
 		else if (c == '0')
-			ret = put_zeros(conv, width, ret);
+			ret = put_zeros(conv, width, ret, len);
 	}
 	return (ret);
 }

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:58:26 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 13:00:55 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 14:16:10 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,16 +20,15 @@ int		ft_written_char(char s, int ct)
 
 char	*ft_go_to(char *s)
 {
-	printf("\nDebut-go-to --   ");
+	/*printf("\nDebut-go-to --   ");
+	printf("thechar[%c] -- ", *s);*/
 	while (is_convers_flag(*(s++)) == 0)
-	{
 		;
-		printf("conv[%i]\n", is_convers_flag(*s));
-	}
-	printf("thechar[%c] -- ", *s);
-	printf("thechar1[%c] -- ", *(s + 1));
-	printf("thechar2[%c] -- ", *(s + 2));
-	printf("   Fin-go-to\n");
+	s = s - 1;
+	/*printf("thechar1[%c] -- ", *s);
+	printf("thechar2[%c] -- ", *(s + 1));
+	printf("thechar3[%c] -- ", *(s + 2));
+	printf("   Fin-go-to\n");*/
 	return (s);
 }
 
@@ -40,6 +39,7 @@ char	*ft_cut_fmt(char *s)
 
 	j = 0;
 	s = ft_go_to(s);
+	s = s + 1;
 	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	while (*s)
 		res[j++] = *(s++);
@@ -77,9 +77,10 @@ int		ft_printf(const char *format, ...)
 	{
 		if (*s == '%')
 		{
-			printf("char1 = [%c]\n", *s);
+			//printf("Mon format : [%s]\n", s);
+			//printf("\nchar1 = [%c]\n", *s);
 			s = ft_go_to(s);
-			printf("char2 = [%c]\n", *s);
+			//printf("char2 = [%c]\n", *s);
 			if (is_convers_flag(*s) == 1)
 				ct += ft_treat_int(s, va_arg(ap, intmax_t), ft_full_fmt(s));
 			else if (is_convers_flag(*s) == 2)

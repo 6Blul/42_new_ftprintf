@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 09:10:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 06:02:21 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 14:15:27 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,14 +109,20 @@ char	*ft_align(char *put, char *fmt, char c)
 
 	j = 0;
 	num = (char *)malloc(sizeof(char) * ft_strlen(put) + 1);
+	//printf("fmt = %s\n", fmt);
 	while (!ft_isdigit(*fmt))
 		(*fmt)++;
+	//printf("char %c\n", *fmt);
 	while (ft_isdigit(*fmt))
-		num[j++] = *fmt++;
+		num[j++] = *(fmt++);
 	num[j] = 0;
+	//printf("NUM = %s\n", num);
 	nb = ft_atoi(num);
 	free(num);
-	if (nb > 0)
+	//printf("LM == %i\n", nb);
+	if (nb == 0 || nb <= ft_strlen(put))
+		return (put);
+	else
 		nb -= 1;
 	if (c == '0' || c == ' ')
 		put = to_print(nb, put, c);
