@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:58:26 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 06:07:08 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 10:38:16 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,18 @@ char	*ft_cut_fmt(char *s)
 	return (res);
 }
 
+char	*ft_full_fmt(const char *fmt)
+{
+	char	*tp;
+	char	*res;
+
+	tp = ft_strdup((char *)fmt);
+	while (*tp != '%')
+		(*tp)++;
+	res = ft_strdup(tp);
+	return (res);
+}
+
 int		ft_printf(const char *format, ...)
 {
 	va_list		ap;
@@ -54,11 +66,11 @@ int		ft_printf(const char *format, ...)
 		{
 			s = ft_go_to(s);
 			if (is_convers_flag(*s) == 1)
-				ct += ft_treat_int(s, va_arg(ap, intmax_t));
+				ct += ft_treat_int(s, va_arg(ap, intmax_t), ft_full_fmt(format));
 			else if (is_convers_flag(*s) == 2)
-				ct += ft_treat_uint(s, va_arg(ap, uintmax_t));
+				ct += ft_treat_uint(s, va_arg(ap, uintmax_t), ft_full_fmt(format));
 			else if (is_convers_flag(*s) == 3)
-				ct += ft_treat_void(s, va_arg(ap, void *));
+				ct += ft_treat_void(s, va_arg(ap, void *), ft_full_fmt(format));
 			s = ft_cut_fmt(s);
 		}
 		else

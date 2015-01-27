@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 04:53:28 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 10:38:39 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
 # include <stdio.h>
 
 int			ft_printf(const char *format, ...);
+char		*ft_full_fmt(const char *fmt);
 char		*ft_go_to(char *s);
 char		*ft_cut_fmt(char *s);
 int			ft_written_char(char s, int ct);
@@ -39,9 +40,9 @@ int			is_convers_flag(char c);
 int			is_sign_flag(char c);
 int			is_let_flag(char c);
 char		*ft_strrev(char *s);
-int			ft_treat_int(char *fmt, intmax_t arg);
-int			ft_treat_uint(char *fmt, uintmax_t arg);
-int			ft_treat_void(char *fmt, void *arg);
+int			ft_treat_int(char *fmt, intmax_t arg, char *copy);
+int			ft_treat_uint(char *fmt, uintmax_t arg, char *copy);
+int			ft_treat_void(char *fmt, void *arg, char *copy);
 char		*ft_uinmaxtoa(uintmax_t n);
 char		*ft_maxtoa(intmax_t n);
 short		ft_h_i(intmax_t arg);
@@ -78,5 +79,6 @@ char		*ft_convers_void(char *fmt, int *tab, void *arg);
 char		*ft_treat_preint(int nb, char *pre, char *put);
 char		*ft_treat_prestr(int nb, char *pre, char *put);
 char		*ft_treat_hexa(int nb, char *pre, char *put);
+char		*ft_insta_uint(uintmax_t arg, char *fmt);
 
 #endif

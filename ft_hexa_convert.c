@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/12 02:05:53 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/20 13:19:03 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 10:41:57 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,17 +16,17 @@
 char	ft_hexa_nb(int n)
 {
 	if (n == 10)
-		return ('A');
+		return ('a');
 	else if (n == 11)
-		return ('B');
+		return ('b');
 	else if (n == 12)
-		return ('C');
+		return ('c');
 	else if (n == 13)
-		return ('D');
+		return ('d');
 	else if (n == 14)
-		return ('E');
+		return ('e');
 	else if (n == 15)
-		return ('F');
+		return ('f');
 	return ((char)n);
 }
 

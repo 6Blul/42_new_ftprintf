@@ -1,41 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_types.c                                         :+:      :+:    :+:   */
+/*   ft_treat_instauint.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/20 09:41:55 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 09:34:49 by spochez          ###   ########.fr       */
+/*   Created: 2015/01/27 09:13:47 by spochez           #+#    #+#             */
+/*   Updated: 2015/01/27 10:40:25 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		is_sign_flag(char c)
+char	*ft_insta_uint(uintmax_t arg, char *fmt)
 {
-	if (ft_strchr("#0 +-.123456789", (int)c) != NULL)
-		return (1);
-	return (0);
-}
+	char	*put;
 
-int		is_let_flag(char c)
-{
-	if (ft_strchr("hljz", (int)c) != NULL)
-		return (1);
-	return (0);
-}
-
-int		is_convers_flag(char c)
-{
-	int		nb;
-
-	nb = 0;
-	if (ft_strchr("dDicC", (int)c) != NULL)
-		nb = 1;
-	if (ft_strchr("oOuUxXbt", (int)c) != NULL)
-		nb = 2;
-	if (ft_strchr("sSp%", (int)c) != NULL)
-		nb = 3;
-	return (nb);
+	/*printf("C3 : [%c]\n", *fmt);
+	printf("FMT : [%s]\n", fmt);*/
+	while (is_convers_flag(*(fmt++)) == 0)
+		;
+	//printf("C4 : [%c]\n", *fmt);
+	if (*fmt == 'o' || *fmt == 'O')
+		put = ft_base_convert(arg, 'o');
+	else if (*fmt == 'x' || *fmt == 'X')
+		put = ft_hexa(arg);
+	else
+		put = ft_maxtoa(arg);
+	return (put);
 }

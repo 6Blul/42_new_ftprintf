@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 02:53:31 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 10:41:19 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,13 @@ int		is_wstr(char *c)
 	return (*c == 'S' || (*c == 's' && *(c - 1) == 'l'));
 }
 
-int		ft_treat_int(char *fmt, intmax_t arg)
+int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 {
 	int		*tab;
 	char	*put;
 
 	tab = (int *)malloc(sizeof(int) * 6);
-	tab = fill_iflags(tab, fmt, arg);
+	tab = fill_iflags(tab, copy, arg);
 	if (*(fmt - 1) == '%' && !is_wchar(fmt))
 		put = ft_maxtoa(arg);
 	else if (is_wchar(fmt))
@@ -51,23 +51,28 @@ int		ft_treat_int(char *fmt, intmax_t arg)
 	return (ft_strlen(put));
 }
 
-int		ft_treat_uint(char *fmt, uintmax_t arg)
+int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 {
 	int		*tab;
 	char	*put;
 
+	//printf("\nOo>[%s]<oO\n", fmt);
 	tab = (int *)malloc(sizeof(int) * 8);
-	if (*fmt == 'x' || *fmt == 'X')
+	//printf("C1 : [%c]\n", *fmt);
+	//printf("C1bis : [%c]\n", *(fmt - 1));
+	if (*fmt == 'x' || *fmt == 'X' || *fmt == 'o' || *fmt == 'O')
 		tab[7] = 2;
-	tab = fill_uiflags(tab, fmt);
+	tab = fill_uiflags(tab, copy);
+	//printf("C2 : [%c]\n", *fmt);
+	//printf("-->[%s]<--\n", fmt);
 	if (*(fmt - 1) == '%')
-		put = ft_uinmaxtoa(arg);
+		put = ft_insta_uint(arg, fmt);
 	else
 	{
 		while (is_let_flag(*fmt))
 		{
 			put = ft_ui_conversions(arg, put, fmt);
-			(*fmt)--;
+			(*fmt)++;
 		}
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, fmt, tab[7]);
@@ -80,17 +85,29 @@ int		ft_treat_uint(char *fmt, uintmax_t arg)
 	return (ft_strlen(put));
 }
 
-int		ft_treat_void(char *fmt, void *arg)
+int		ft_treat_void(char *fmt, void *arg, char *copy)
 {
 	int		*tab;
 	char	*put;
 
+	//printf("A\n");
 	tab = (int *)malloc(sizeof(int) * 3);
-	tab = fill_vflags(tab, fmt);
+	/*printf("\nFmtvoid = %s\n", fmt);
+	printf("Copyvoid = %s\n", copy);
+	printf("CV : [%c]\n", *fmt);
+	printf("C1V : [%c]\n", *(fmt - 1));
+	printf("CC : [%c]\n", *copy);
+	printf("C1C : [%c]\n", *(copy - 1));*/
+	tab = fill_vflags(tab, copy);
+	//printf("B\n");
 	if (is_wstr(fmt))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')
+	{
+		//printf("B\n");
 		put = ft_convers_void(fmt, tab, (void *)arg);
+		//printf("Void put = [%s]\n", put);
+	}
 	else
 	{
 		put = ft_strdup((char *)arg);

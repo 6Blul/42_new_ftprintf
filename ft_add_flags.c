@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 09:10:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/24 02:54:46 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 06:02:21 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -115,6 +115,7 @@ char	*ft_align(char *put, char *fmt, char c)
 		num[j++] = *fmt++;
 	num[j] = 0;
 	nb = ft_atoi(num);
+	free(num);
 	if (nb > 0)
 		nb -= 1;
 	if (c == '0' || c == ' ')
