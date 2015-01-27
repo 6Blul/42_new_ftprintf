@@ -6,18 +6,18 @@
 #    By: spochez <spochez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/24 19:33:48 by spochez           #+#    #+#              #
-#    Updated: 2015/01/24 20:58:57 by spochez          ###   ########.fr        #
+#    Updated: 2015/01/27 01:03:31 by spochez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME = libftprintf.a
 
-SRC = ft_add_flag.c			\
+SRC = ft_add_flags.c		\
 	  ft_atoi.c				\
 	  ft_base_convert.c		\
 	  ft_bzero.c			\
 	  ft_fill_tab.c			\
-	  ft_fst_flag.c			\
+	  ft_fst_flags.c		\
 	  ft_get_lm.c			\
 	  ft_hexa_convert.c		\
 	  ft_isdigit.c			\
@@ -44,9 +44,11 @@ SRC = ft_add_flag.c			\
 
 OBJ = $(SRC:.c=.o) 
 
-CFLAGS += -I -Wall -Werror -Wextra -I
+CFLAGS += -Wall -Werror -Wextra
 
 all : $(NAME)
+
+$(NAME) :
 	gcc -c $(CFLAGS) $(SRC)
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
