@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 12:18:06 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/27 12:41:59 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,8 +85,12 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 	int		*tab;
 	char	*put;
 
+	printf("cc\n");
 	tab = (int *)malloc(sizeof(int) * 3);
 	tab = fill_vflags(tab, copy);
+	printf("cc1\n");
+	while (*tab)
+		printf("[%i]\n", *tab++);
 	if (is_wstr(fmt))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')

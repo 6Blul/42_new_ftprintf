@@ -6,7 +6,7 @@
 #    By: spochez <spochez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/24 19:33:48 by spochez           #+#    #+#              #
-#    Updated: 2015/01/27 01:08:25 by spochez          ###   ########.fr        #
+#    Updated: 2015/01/27 12:38:56 by spochez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -35,6 +35,7 @@ SRC = ft_add_flags.c		\
 	  ft_strlen.c			\
 	  ft_strrev.c			\
 	  ft_to_print.c			\
+	  ft_treat_instauint.c	\
 	  ft_treat_prec.c		\
 	  ft_treat_types.c		\
 	  ft_treat_void.c		\
