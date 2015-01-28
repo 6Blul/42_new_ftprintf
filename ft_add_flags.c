@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 09:10:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 14:49:02 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/28 03:31:45 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,25 +77,23 @@ char	*ft_sharpo(char *put)
 
 char	*ft_left_align(int nb, char *put)
 {
-	char	*tp;
 	char	*res;
 	int		i;
+	int		j;
 
-	printf("pd");
 	i = 0;
+	j = 0;
 	if (nb <= ft_strlen(put))
 		return (put);
-	tp = ft_strdup(put);
-	printf("pd");
-	res = (char *)malloc(sizeof(char) * nb + 1);
-	while (*tp && i <= nb)
+	res = (char *)malloc(sizeof(char) * (nb + 1));
+	while (put[i])
+		res[j++] = put[i++];
+	while (j <= nb)
 	{
-		*(res++) = *(tp++);
-		i++;
+		res[j] = ' ';
+		j++;
 	}
-	while (i < nb)
-		*(res++) = ' ';
-	*res = 0;
+	res[j] = 0;
 	return (res);
 }
 
@@ -106,43 +104,45 @@ char	*ft_align(char *put, char *fmt, char c)
 	int		j;
 
 	j = 0;
-	printf("Char = %c\n", c);
+	//printf("Char = %c\n", c);
 	num = (char *)malloc(sizeof(char) * ft_strlen(put) + 1);
-	printf("fmt = %s\n", fmt);
-	printf("fmt* = %c\n", *fmt);
+	//printf("fmt = %s\n", fmt);
+	//printf("fmt* = %c\n", *fmt);
 	while (!ft_isdigit(*fmt))
 		fmt = fmt + 1;
-	printf("fmt2 = %s\n", fmt);
-	printf("char %c\n", *fmt);
+	//printf("fmt2 = %s\n", fmt);
+	//printf("char %c\n", *fmt);
 	while (ft_isdigit(*fmt))
 		num[j++] = *(fmt++);
 	num[j] = 0;
-	printf("NUM = %s\n", num);
+	//printf("NUM = %s\n", num);
 	nb = ft_atoi(num);
-	printf("LM == %i\n", nb);
-	printf("put = %s\n", put);
+	//printf("LM == %i\n", nb);
+//	printf("put = %s\n", put);
 	if (nb <= 0 || nb <= ft_strlen(put))
 	{
-		printf("Ton pere la motte de terre\n");
+		//printf("Ton pere la motte de terre\n");
 		return (put);
 	}
 	else
 	{
 		nb -= 1;
-		printf("Ta mere le reverbere\n");
-		printf("NewLM == %i\n", nb);
+		//printf("Ta mere le reverbere\n");
+		//printf("NewLM == %i\n", nb);
 	}
-	printf("Ton mari la borne incendie\n");
+	//printf("Ton mari la borne incendie\n");
 	if (c == '0' || c == ' ')
 	{
-		printf("Ton oncle le furoncle\n");
+		//printf("Ton oncle le furoncle\n");
 		put = to_print(nb, put, c);
 	}
 	else if (c == 'l')
 	{
-		printf("Ta soeur le pot de fleur\n");
+		//printf("Ta soeur le pot de fleur\n");
+	//	printf("Put avant left : %s\n", put);
+		//printf("Nb avant left : %i\n", nb);
 		put = ft_left_align(nb, put);
-		printf("Ton frere le lampadaire\n");
+	//	printf("Ton frere le lampadaire\n");
 	}
 	return (put);
 }
