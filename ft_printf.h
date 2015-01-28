@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 11:54:00 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/28 23:29:47 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,7 +78,6 @@ void		ft_adjust(int lm);
 char		*ft_convers_void(char *fmt, int *tab, void *arg);
 char		*ft_treat_preint(int nb, char *pre, char *put);
 char		*ft_treat_prestr(int nb, char *pre, char *put);
-char		*ft_treat_hexa(int nb, char *pre, char *put);
 char		*ft_insta_uint(uintmax_t arg, char *fmt);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 14:16:08 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/28 23:20:24 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,10 +35,12 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
 	else
 	{
-		while (is_let_flag(*fmt))
+		printf("\nFMT = [%s]\n", fmt);
+		printf("*FMT = [%c]\n", *fmt);
+		while (is_let_flag(*(fmt--)))
 		{
 			put = ft_i_conversions(arg, put, fmt);
-			(*fmt)--;
+			printf("*FMT1 = %c\n", *fmt);
 		}
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, fmt, 0);
@@ -90,7 +92,9 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 	tab = fill_vflags(tab, copy);
 	/*printf("cc1\n");
 	while (*tab)
-		printf("[%i]\n", *tab++);*/
+		printf("[%i]\n", *tab++);
+	printf("PrintFmt = %s\n", fmt);
+	printf("PrintCopy = %s\n", copy);*/
 	if (is_wstr(fmt))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')
@@ -100,8 +104,10 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 		put = ft_strdup((char *)arg);
 		if (*(fmt - 1) != '%')
 		{
+			//printf("MyFmt = %s\n", fmt);
+			//printf("MyPut = %s\n", put);
 			if (tab[0] == 1)
-				put = ft_treat_prec(put, fmt, 1);
+				put = ft_treat_prec(put, copy, 1);
 			if (put)
 				put = ft_v_sflags(put, tab, fmt);
 		}
