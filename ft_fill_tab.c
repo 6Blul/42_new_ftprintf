@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:56:19 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 13:39:04 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 01:16:19 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,13 +27,15 @@ int		*fill_iflags(int *tab, char *fmt, intmax_t arg)
 			tab[3] = 1;
 		if (*fmt == '-')
 			tab[4] = 1;
-		if (*fmt == '0')
+		if (*fmt == '0' && !ft_isdigit(*(fmt - 1)) && tab[0] == 0)
 			tab[5] = 1;
 	}
 	if (tab[1] == 1 && tab[2] == 1)
 		tab[2] = 0;
 	if (tab[4] == 1 && tab[5] == 1)
 		tab[5] = 0;
+	if (*fmt == 'c' && tab[0] == 1)
+		tab[0] = 0;
 	return (tab);
 }
 
@@ -54,7 +56,7 @@ int		*fill_uiflags(int *tab, char *fmt)
 			tab[4] = 1;
 		if (*fmt == '-')
 			tab[5] = 1;
-		if (*fmt == '0')
+		if (*fmt == '0' && !ft_isdigit(*(fmt - 1)) && tab[0] == 0)
 			tab[6] = 1;
 	}
 	if (tab[1] == 1 && tab[2] == 1)

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/28 23:28:55 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 00:46:54 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,8 +47,6 @@ int		ft_get_precision(char *fmt)
 {
 	int		nb;
 
-	/*printf("Fmt = %s\n", fmt);
-	printf("Suce mon segfault\n");*/
 	while (*(fmt++) != '.')
 		;
 	nb = ft_atoi(fmt);
@@ -62,7 +60,6 @@ char	*ft_treat_prec(char *put, char *fmt, int type)
 
 	nb = ft_get_precision(fmt);
 	pre = (char *)malloc(sizeof(char) * nb + 1);
-//	printf("NB == %i\n", nb);
 	if (type == 0)
 	{
 		if (nb <= ft_strlen(put))

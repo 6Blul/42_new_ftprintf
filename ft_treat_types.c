@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/28 23:20:24 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 01:12:18 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,25 +27,23 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	int		*tab;
 	char	*put;
 
+	//printf("\nFMT = [%s]\n", fmt);
+	//printf("COPY = [%s]\n", copy);
 	tab = (int *)malloc(sizeof(int) * 6);
 	tab = fill_iflags(tab, copy, arg);
-	if (*(fmt - 1) == '%' && !is_wchar(fmt))
-		put = ft_maxtoa(arg);
-	else if (is_wchar(fmt))
+	if (is_wchar(fmt))
 		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
-	else
+	put = ft_maxtoa(arg);
+	if (*(fmt - 1) != '%')
 	{
-		printf("\nFMT = [%s]\n", fmt);
-		printf("*FMT = [%c]\n", *fmt);
+		/*printf("\nFMT = [%s]\n", fmt);
+		printf("*FMT = [%c]\n", *fmt);*/
 		while (is_let_flag(*(fmt--)))
-		{
 			put = ft_i_conversions(arg, put, fmt);
-			printf("*FMT1 = %c\n", *fmt);
-		}
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, fmt, 0);
+			put = ft_treat_prec(ft_maxtoa(arg), fmt, 0);
 		if (put)
-			put = ft_i_sflags(put, tab, fmt);
+			put = ft_i_sflags(put, tab, copy);
 		else
 			return (0);
 	}
@@ -62,9 +60,8 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 	if (*fmt == 'x' || *fmt == 'X' || *fmt == 'o' || *fmt == 'O')
 		tab[7] = 2;
 	tab = fill_uiflags(tab, copy);
-	if (*(fmt - 1) == '%')
-		put = ft_insta_uint(arg, fmt);
-	else
+	put = ft_insta_uint(arg, fmt);
+	if (*(fmt - 1) != '%')
 	{
 		while (is_let_flag(*fmt))
 		{
@@ -72,9 +69,9 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 			(*fmt)++;
 		}
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, fmt, tab[7]);
+			put = ft_treat_prec(ft_uinmaxtoa(arg), fmt, 0);
 		if (put)
-			put = ft_ui_sflags(put, tab, fmt);
+			put = ft_ui_sflags(put, tab, copy);
 		else
 			return (0);
 	}
@@ -87,25 +84,17 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 	int		*tab;
 	char	*put;
 
-	//printf("cc\n");
 	tab = (int *)malloc(sizeof(int) * 3);
 	tab = fill_vflags(tab, copy);
-	/*printf("cc1\n");
-	while (*tab)
-		printf("[%i]\n", *tab++);
-	printf("PrintFmt = %s\n", fmt);
-	printf("PrintCopy = %s\n", copy);*/
 	if (is_wstr(fmt))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')
-		put = ft_convers_void(fmt, tab, (void *)arg);
+		put = ft_convers_void(copy, tab, (void *)arg);
 	else
 	{
 		put = ft_strdup((char *)arg);
 		if (*(fmt - 1) != '%')
 		{
-			//printf("MyFmt = %s\n", fmt);
-			//printf("MyPut = %s\n", put);
 			if (tab[0] == 1)
 				put = ft_treat_prec(put, copy, 1);
 			if (put)

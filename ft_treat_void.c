@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 19:37:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 12:18:32 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/28 23:42:57 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,8 +19,7 @@ char	*ft_convers_void(char *fmt, int *tab, void *arg)
 
 	addr = (uintmax_t)arg;
 	put = ft_hexa(addr);
-	if (tab[0] == 1)
-		put = ft_treat_prec(put, fmt, 2);
+	put = ft_sharpx(put);
 	if (tab[1] == 1)
 	{
 		if (tab[2] == 1)
@@ -28,6 +27,5 @@ char	*ft_convers_void(char *fmt, int *tab, void *arg)
 		else
 			put = ft_align(put, fmt, ' ');
 	}
-	put = ft_sharpx(put);
 	return (put);
 }

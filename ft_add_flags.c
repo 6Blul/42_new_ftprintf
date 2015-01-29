@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 09:10:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/28 03:31:45 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 01:01:21 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -104,45 +104,20 @@ char	*ft_align(char *put, char *fmt, char c)
 	int		j;
 
 	j = 0;
-	//printf("Char = %c\n", c);
 	num = (char *)malloc(sizeof(char) * ft_strlen(put) + 1);
-	//printf("fmt = %s\n", fmt);
-	//printf("fmt* = %c\n", *fmt);
 	while (!ft_isdigit(*fmt))
 		fmt = fmt + 1;
-	//printf("fmt2 = %s\n", fmt);
-	//printf("char %c\n", *fmt);
 	while (ft_isdigit(*fmt))
 		num[j++] = *(fmt++);
 	num[j] = 0;
-	//printf("NUM = %s\n", num);
 	nb = ft_atoi(num);
-	//printf("LM == %i\n", nb);
-//	printf("put = %s\n", put);
 	if (nb <= 0 || nb <= ft_strlen(put))
-	{
-		//printf("Ton pere la motte de terre\n");
 		return (put);
-	}
 	else
-	{
 		nb -= 1;
-		//printf("Ta mere le reverbere\n");
-		//printf("NewLM == %i\n", nb);
-	}
-	//printf("Ton mari la borne incendie\n");
 	if (c == '0' || c == ' ')
-	{
-		//printf("Ton oncle le furoncle\n");
 		put = to_print(nb, put, c);
-	}
 	else if (c == 'l')
-	{
-		//printf("Ta soeur le pot de fleur\n");
-	//	printf("Put avant left : %s\n", put);
-		//printf("Nb avant left : %i\n", nb);
 		put = ft_left_align(nb, put);
-	//	printf("Ton frere le lampadaire\n");
-	}
 	return (put);
 }
