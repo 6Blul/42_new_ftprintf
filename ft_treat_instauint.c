@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/27 09:13:47 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/27 12:17:32 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 01:20:49 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,10 @@ char	*ft_insta_uint(uintmax_t arg, char *fmt)
 		(*fmt)++;
 	if (*fmt == 'o' || *fmt == 'O')
 		put = ft_base_convert(arg, 'o');
+	else if (*fmt == 'b')
+		put = ft_base_convert(arg, 'b');
+	else if (*fmt == 't')
+		put = ft_base_convert(arg, 't');
 	else if (*fmt == 'x' || *fmt == 'X')
 		put = ft_hexa(arg);
 	else
