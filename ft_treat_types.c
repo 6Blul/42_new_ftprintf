@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/29 01:12:18 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 01:49:33 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 		while (is_let_flag(*(fmt--)))
 			put = ft_i_conversions(arg, put, fmt);
 		if (tab[0] == 1)
-			put = ft_treat_prec(ft_maxtoa(arg), fmt, 0);
+			put = ft_treat_prec(put, copy, 0);
 		if (put)
 			put = ft_i_sflags(put, tab, copy);
 		else
@@ -69,7 +69,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 			(*fmt)++;
 		}
 		if (tab[0] == 1)
-			put = ft_treat_prec(ft_uinmaxtoa(arg), fmt, 0);
+			put = ft_treat_prec(put, copy, 0);
 		if (put)
 			put = ft_ui_sflags(put, tab, copy);
 		else
