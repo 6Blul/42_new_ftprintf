@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/29 01:49:33 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 02:06:02 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,8 +27,6 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	int		*tab;
 	char	*put;
 
-	//printf("\nFMT = [%s]\n", fmt);
-	//printf("COPY = [%s]\n", copy);
 	tab = (int *)malloc(sizeof(int) * 6);
 	tab = fill_iflags(tab, copy, arg);
 	if (is_wchar(fmt))
@@ -36,8 +34,6 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	put = ft_maxtoa(arg);
 	if (*(fmt - 1) != '%')
 	{
-		/*printf("\nFMT = [%s]\n", fmt);
-		printf("*FMT = [%c]\n", *fmt);*/
 		while (is_let_flag(*(fmt--)))
 			put = ft_i_conversions(arg, put, fmt);
 		if (tab[0] == 1)

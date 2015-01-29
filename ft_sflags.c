@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:50:51 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/28 02:36:56 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 02:05:50 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ char	*ft_ui_sflags(char *put, int *tab, char *fmt)
 
 	temp = fmt;
 	while (is_convers_flag(*temp) != 2)
-		(*temp)++;
+		temp = temp + 1;
 	if (tab[1] == 1)
 		put = ft_add_bef(put, '+');
 	else if (tab[2] == 1)
@@ -59,14 +59,8 @@ char	*ft_ui_sflags(char *put, int *tab, char *fmt)
 
 char	*ft_v_sflags(char *put, int *tab, char *fmt)
 {
-	/*printf("\nPUT = %s\n", put);
-	printf("FMT = %s\n", fmt);
-	printf("Prec ? %i\n", tab[0]);
-	printf("Lm ? %i\n", tab[1]);
-	printf("Left Align ? %i\n", tab[2]);*/
 	while (*(fmt--) != '%')
 		;
-	//printf("FMT1 = %s\n", fmt);
 	if (tab[1] == 1)
 	{
 		if (tab[2] == 1)

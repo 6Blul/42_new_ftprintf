@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/29 01:46:53 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 02:07:05 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@ char	*ft_treat_preint(int nb, char *pre, char *put)
 	int		len;
 	int		zer;
 
-	printf("\n\npd\n\n");
 	i = 0;
 	len = ft_strlen(put);
 	zer = nb - len;
@@ -48,7 +47,6 @@ int		ft_get_precision(char *fmt)
 {
 	int		nb;
 
-	printf("FMT == %s\n", fmt);
 	while (*(fmt++) != '.')
 		;
 	nb = ft_atoi(fmt);
@@ -60,12 +58,8 @@ char	*ft_treat_prec(char *put, char *fmt, int type)
 	char	*pre;
 	int		nb;
 
-	printf("\n\ncc\n\n");
-	printf("Type = %i\n", type);
-	printf("Put = %s\n", put);
 	nb = ft_get_precision(fmt);
 	pre = (char *)malloc(sizeof(char) * nb + 1);
-	printf("NB = %i\n", nb);
 	if (type == 0)
 	{
 		if (nb <= ft_strlen(put))
