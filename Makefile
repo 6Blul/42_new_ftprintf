@@ -6,7 +6,7 @@
 #    By: spochez <spochez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/24 19:33:48 by spochez           #+#    #+#              #
-#    Updated: 2015/01/27 12:38:56 by spochez          ###   ########.fr        #
+#    Updated: 2015/01/29 03:53:35 by spochez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,6 +18,7 @@ SRC = ft_add_flags.c		\
 	  ft_bzero.c			\
 	  ft_fill_tab.c			\
 	  ft_fst_flags.c		\
+	  ft_get_char.c			\
 	  ft_get_lm.c			\
 	  ft_hexa_convert.c		\
 	  ft_isdigit.c			\
