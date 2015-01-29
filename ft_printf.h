@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/28 23:43:20 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 03:07:02 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int			*fill_vflags(int *tab, char *fmt);
 int			is_convers_flag(char c);
 int			is_sign_flag(char c);
 int			is_let_flag(char c);
+char		*ft_get_char(char arg);
 char		*ft_strrev(char *s);
 int			ft_treat_int(char *fmt, intmax_t arg, char *copy);
 int			ft_treat_uint(char *fmt, uintmax_t arg, char *copy);

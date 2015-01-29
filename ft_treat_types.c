@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/29 02:06:02 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/29 03:10:35 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,10 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	tab = fill_iflags(tab, copy, arg);
 	if (is_wchar(fmt))
 		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
-	put = ft_maxtoa(arg);
+	if (*fmt == 'c')
+		put = ft_get_char((char)arg);
+	else
+		put = ft_maxtoa(arg);
 	if (*(fmt - 1) != '%')
 	{
 		while (is_let_flag(*(fmt--)))
