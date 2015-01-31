@@ -6,7 +6,7 @@
 #    By: spochez <spochez@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2015/01/24 19:33:48 by spochez           #+#    #+#              #
-#    Updated: 2015/01/29 03:53:35 by spochez          ###   ########.fr        #
+#    Updated: 2015/01/31 03:12:19 by spochez          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -43,6 +43,7 @@ SRC = ft_add_flags.c		\
 	  ft_types.c			\
 	  ft_uinmaxtoa.c		\
 	  ft_wchrtreat.c		\
+	  main.c				\
 
 OBJ = $(SRC:.c=.o) 
 
