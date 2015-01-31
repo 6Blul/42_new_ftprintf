@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/31 07:08:04 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/31 08:37:40 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,28 +27,28 @@ int		main(void)
 	long unsigned int	lx;	//X unsigned decimal (as x)
 	long unsigned int	lo;	//lo long unsigned octal
 	/*unsigned int		bi;//b -> A tester sans le vrai PRINTF
-	unsigned int		ter;//t -> A tester sans le vrai PRINTF
-*/	int					i;//i signed decimal
+	unsigned int		ter;//t -> A tester sans le vrai PRINTF*/
+	int					i;//i signed decimal
 	int					d;//d signed decimal
-	/*long int			dd;//D long signed decimal
+//	long int			dd;//D long signed decimal
 	char				*s;//s char *
-	char				*p;//p void *
-	char				c;//c char*/
+//	char				*p;//p void *
+//	char				c;//c char*/
 
 	test = "Test de :";
-	u = 12950;
-	x = 3512;
-	o = 13540;
-	lu = 1029384756;
-	lx = 2468013570;
-	lo = 1357924688;
+	u = 731;
+	x = 354;
+	o = 13548;
+	lu = 10212;
+	lx = 24616;
+	lo = 27048;
 	/*bi = 478;
 	ter = 890;*/
-	i = 150;
-	d = 180;
-	/*dd = 90102030;
+	i = 0;
+	d = -148;
+	//dd = 90102030;
 	s = "un enooorme chat bleu";
-	p = "je oui je oui je oui";
+	/*p = "je oui je oui je oui";
 	c = 'L';*/
 
 	printf("\n%s flag 'u'\n", test);
@@ -70,8 +70,8 @@ int		main(void)
 	printf("Test du flag '#' : [%#x]\n\n", x);
 	ft_printf("Test du flag '0' : [%0x], [%015x], [%04x]\n", x, x, x);
 	printf("Test du flag '0' : [%0x], [%015x], [%04x]\n\n", x, x, x);
-	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%18x], [%3x], [%-22x], [%3x]\n", x, x, x, x);
-	printf("Test du flag '-' et de la longueur minimale du champ : [%18x], [%3x], [%-22x], [%3x]\n\n", x, x, x, x);
+	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%18x], [%4x], [%-22x], [%3x]\n", x, x, x, x);
+	printf("Test du flag '-' et de la longueur minimale du champ : [%18x], [%4x], [%-22x], [%3x]\n\n", x, x, x, x);
 	ft_printf("Test de la precision : [%23x], [%3x], [%78x]\n", x, x, x);
 	printf("Test de la precision : [%23x], [%3x], [%78x]\n\n", x, x, x);
 	ft_printf("Test de plusieurs flags sur le meme argument : [%#043x], [%.18x], [%#-23x]\n", x, x, x);
@@ -167,15 +167,22 @@ int		main(void)
 	ft_printf("Tests multiples : [%-12.30d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n", d, d, d, d, d, d);
 	printf("Tests multiples : [%-12.30d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n", d, d, d, d, d, d);
 
-	/*printf("\n%s flag 'D'\n", test);
+	//printf("\n%s flag 'D'\n", test);
 
 
 	printf("\n%s flag 's'\n", test);
+	ft_printf("Original = [%s]\n", s);
+	printf("Original = [%s]\n", s);
+	ft_printf("Test de la long. minimale et du flag '-' : \n[%12s]\n[%1s]\n[%25s]\n[%-25s]\n[%-12s]\n", s, s, s, s, s);
+	printf("Test de la long. minimale et du flag '-' : \n[%12s]\n[%1s]\n[%25s]\n[%-25s]\n[%-12s]\n", s, s, s, s, s);
+	ft_printf("Test de la precision : [%.25s]\n[%.5s]\n", s, s);
+	printf("Test de la precision : [%.25s]\n[%.5s]\n[%.s]\n", s, s, s);
+	ft_printf("Tests multiples : [%15.5s]\n[%5.15s]\n[%30.5s]\n[%5.30s]\n", s, s, s, s);
+	printf("Tests multiples : [%15.5s]\n[%5.15s]\n[%30.5s]\n[%5.30s]\n", s, s, s, s);
+
+	//printf("\n%s flag 'p'\n", test);
 
 
-	printf("\n%s flag 'p'\n", test);
-
-
-	printf("\n%s flag 'c'\n", test);*/
+	//printf("\n%s flag 'c'\n", test);
 	return (0);
 }
