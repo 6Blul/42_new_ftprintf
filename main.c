@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/31 04:01:02 by spochez          ###   ########.fr       */
+/*   Updated: 2015/01/31 07:08:04 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,30 +23,30 @@ int		main(void)
 	unsigned int		o;//o unsigned octal
 	unsigned int		x;//x unsigned hexadecimal
 	unsigned int		u;//u unsigned decimal
-	/*long unsigned int 	lu; //lu long unsigned decimal
-	unsigned int		lx;	//X unsigned decimal (as x)
+	long unsigned int 	lu; //lu long unsigned decimal
+	long unsigned int	lx;	//X unsigned decimal (as x)
 	long unsigned int	lo;	//lo long unsigned octal
-	unsigned int		bi;//b -> A tester sans le vrai PRINTF
+	/*unsigned int		bi;//b -> A tester sans le vrai PRINTF
 	unsigned int		ter;//t -> A tester sans le vrai PRINTF
-	int					i;//i signed decimal
+*/	int					i;//i signed decimal
 	int					d;//d signed decimal
-	long int			dd;//D long signed decimal
+	/*long int			dd;//D long signed decimal
 	char				*s;//s char *
 	char				*p;//p void *
 	char				c;//c char*/
 
 	test = "Test de :";
 	u = 12950;
-	x = 356;
-	o = 8;
-	/*lu = 1029384756;
-	lx = 2468013579;
-	lo = 1357924680;
-	bi = 478;
-	ter = 890;
-	i = 340;
-	d = 450;
-	dd = 90102030;
+	x = 3512;
+	o = 13540;
+	lu = 1029384756;
+	lx = 2468013570;
+	lo = 1357924688;
+	/*bi = 478;
+	ter = 890;*/
+	i = 150;
+	d = 180;
+	/*dd = 90102030;
 	s = "un enooorme chat bleu";
 	p = "je oui je oui je oui";
 	c = 'L';*/
@@ -54,64 +54,120 @@ int		main(void)
 	printf("\n%s flag 'u'\n", test);
 	ft_printf("Original = [%u]\n", u);
 	printf("Original = [%u]\n", u);
-	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%45u], [%3u], [%-45u], [%3u]\n", u, u, u, u);
-	printf("Test du flag '-' et de la longueur minimale du champ : [%45u], [%3u], [%-45u], [%3u]\n\n", u, u, u, u);
+	ft_printf("Test du flag '0' : [%0u], [%015u], [%04u]\n", u, u, u);
+	printf("Test du flag '0' : [%0u], [%015u], [%04u]\n\n", u, u, u);
+	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%18u], [%3u], [%-22u], [%3u]\n", u, u, u, u);
+	printf("Test du flag '-' et de la longueur minimale du champ : [%18u], [%3u], [%-22u], [%3u]\n\n", u, u, u, u);
 	ft_printf("Test de la precision : [%23u], [%3u], [%78u]\n", u, u, u);
 	printf("Test de la precision : [%23u], [%3u], [%78u]\n\n", u, u, u);
-	ft_printf("Test de plusieurs flags sur le meme argument : [%-45.4u], [%-8u], [%34.7u]\n", u, u, u);
-	printf("Test de plusieurs flags sur le meme argument : [%-45.4u], [%-8u], [%34.7u]\n\n\n", u, u, u);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%-18.4u], [%-8u], [%15.7u]\n", u, u, u);
+	printf("Test de plusieurs flags sur le meme argument : [%-18.4u], [%-8u], [%15.7u]\n\n\n", u, u, u);
 	
 	printf("\n%s flag 'x'\n", test);
 	ft_printf("Original = [%x]\n", x);
 	printf("Original = [%x]\n", x);
 	ft_printf("Test du flag '#' : [%#x]\n", x);
 	printf("Test du flag '#' : [%#x]\n\n", x);
-	ft_printf("Test du flag '0' : [%0x], [%034x], [%04x]\n", x, x, x);
-	printf("Test du flag '0' : [%0x], [%034x], [%04x]\n\n", x, x, x);
-	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%45x], [%3x], [%-45x], [%3x]\n", x, x, x, x);
-	printf("Test du flag '-' et de la longueur minimale du champ : [%45x], [%3x], [%-45x], [%3x]\n\n", x, x, x, x);
+	ft_printf("Test du flag '0' : [%0x], [%015x], [%04x]\n", x, x, x);
+	printf("Test du flag '0' : [%0x], [%015x], [%04x]\n\n", x, x, x);
+	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%18x], [%3x], [%-22x], [%3x]\n", x, x, x, x);
+	printf("Test du flag '-' et de la longueur minimale du champ : [%18x], [%3x], [%-22x], [%3x]\n\n", x, x, x, x);
 	ft_printf("Test de la precision : [%23x], [%3x], [%78x]\n", x, x, x);
 	printf("Test de la precision : [%23x], [%3x], [%78x]\n\n", x, x, x);
-	ft_printf("Test de plusieurs flags sur le meme argument : [%#43x], [%.45x], [%#-23x]\n", x, x, x);
-	ft_printf("Test de plusieurs flags sur le meme argument : [%#43x], [%.45x], [%#-23x]\n\n\n", x, x, x);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%#043x], [%.18x], [%#-23x]\n", x, x, x);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%#043x], [%.18x], [%#-23x]\n\n\n", x, x, x);
 
 	printf("\n%s flag 'o'\n", test);
 	ft_printf("Original = [%o]\n", o);
 	printf("Original = [%o]\n", o);
 	ft_printf("Test du flag '#' : [%#o]\n", o);
 	printf("Test du flag '#' : [%#o]\n\n", o);
-	ft_printf("Test du flag '0' : [%0o], [%034o], [%04o]\n", o, o, o);
-	printf("Test du flag '0' : [%0o], [%034o], [%04o]\n\n", o, o, o);
-	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%45o], [%3o], [%-45o], [%3o]\n", o, o, o, o);
-	printf("Test du flag '-' et de la longueur minimale du champ : [%45o], [%3o], [%-45o], [%3o]\n\n", o, o, o, o);
+	ft_printf("Test du flag '0' : [%0o], [%015o], [%04o]\n", o, o, o);
+	printf("Test du flag '0' : [%0o], [%015o], [%04o]\n\n", o, o, o);
+	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%18o], [%3o], [%-22o], [%3o]\n", o, o, o, o);
+	printf("Test du flag '-' et de la longueur minimale du champ : [%18o], [%3o], [%-22o], [%3o]\n\n", o, o, o, o);
 	ft_printf("Test de la precision : [%23o], [%3o], [%78o]\n", o, o, o);
 	printf("Test de la precision : [%23o], [%3o], [%78o]\n\n", o, o, o);
-	ft_printf("Test de plusieurs flags sur le meme argument : [%#43o], [%.45o], [%#-23o]\n", o, o, o);
-	ft_printf("Test de plusieurs flags sur le meme argument : [%#43o], [%.45o], [%#-23o]\n\n\n", o, o, o);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%#43o], [%.18o], [%#-23o]\n", o, o, o);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%#43o], [%.18o], [%#-23o]\n\n\n", o, o, o);
 
 
-	/*printf("\n%s flag 'lu'\n", test);
+	printf("\n%s flag 'lu'\n", test);
+	ft_printf("Original = [%lu]\n", lu);
+	printf("Original = [%lu]\n", lu);
+	ft_printf("Test du flag '0' : [%0lu], [%015lu], [%04lu]\n", lu, lu, lu);
+	printf("Test du flag '0' : [%0lu], [%015lu], [%04lu]\n\n", lu, lu, lu);
+	ft_printf("Test du flag '-' et de la long. minimale du champ : [%18lu], [%3lu], [%-22lu], [%3lu]\n", lu, lu, lu, lu);
+	printf("Test du flag '-' et de la long. minimale du champ : [%18lu], [%3lu], [%-22lu], [%3lu]\n\n", lu, lu, lu, lu);
+	ft_printf("Test de la precision : [%23lu], [%3lu], [%78lu]\n", lu, lu, lu);
+	printf("Test de la precision : [%23lu], [%3lu], [%78lu]\n\n", lu, lu, lu);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%-18.4lu], [%-8lu], [%15.7lu]\n", lu, lu, lu);
+	printf("Test de plusieurs flags sur le meme argument : [%-18.4lu], [%-8lu], [%15.7lu]\n\n\n", lu, lu, lu); 
 
-
-	printf("\n%s flag 'X'\n", test);
+	printf("\n%s flag 'lx'\n", test);
+	ft_printf("Original = [%lx]\n", lx);
+	printf("Original = [%lx]\n", lx);
+	ft_printf("Test du flag '#' : [%#lx]\n", lx);
+	printf("Test du flag '#' : [%#lx]\n\n", lx);
+	ft_printf("Test du flag '0' : [%0lx], [%015lx], [%04lx]\n", lx, lx, lx);
+	printf("Test du flag '0' : [%0lx], [%015lx], [%04lx]\n\n", lx, lx, lx);
+	ft_printf("Test du flag '-' et de la long. minimale du champ : [%18lx], [%3lx], [%-22lx], [%3lx]\n", lx, lx, lx, lx);
+	printf("Test du flag '-' et de la long. minimale du champ : [%18lx], [%3lx], [%-22lx], [%3lx]\n\n", lx, lx, lx, lx);
+	ft_printf("Test de la precision : [%23lx], [%3lx], [%78lx]\n", lx, lx, lx);
+	printf("Test de la precision : [%23lx], [%3lx], [%78lx]\n\n", lx, lx, lx);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%-18.4lx], [%-8lx], [%15.7lx]\n", lx, lx, lx);
+	printf("Test de plusieurs flags sur le meme argument : [%-18.4lx], [%-8lx], [%15.7lx]\n\n\n", lx, lx, lx); 
 
 
 	printf("\n%s flag 'lo'\n", test);
+	ft_printf("Original = [%lo]\n", lo);
+	printf("Original = [%lo]\n", lo);
+	ft_printf("Test du flag '#' : [%#lo]\n", lo);
+	printf("Test du flag '#' : [%#lo]\n\n", lo);
+	ft_printf("Test du flag '0' : [%0lo], [%015lo], [%04lo]\n", lo, lo, lo);
+	printf("Test du flag '0' : [%0lo], [%015lo], [%04lo]\n\n", lo, lo, lo);
+	ft_printf("Test du flag '-' et de la long. minimale du champ : [%18lo], [%3lo], [%-22lo], [%3lo]\n", lo, lo, lo, lo);
+	printf("Test du flag '-' et de la long. minimale du champ : [%18lo], [%3lo], [%-22lo], [%3lo]\n\n", lo, lo, lo, lo);
+	ft_printf("Test de la precision : [%23lo], [%3lo], [%78lo]\n", lo, lo, lo);
+	printf("Test de la precision : [%23lo], [%3lo], [%78lo]\n\n", lo, lo, lo);
+	ft_printf("Test de plusieurs flags sur le meme argument : [%-18.4lo], [%-8lo], [%15.7lo]\n", lo, lo, lo);
+	printf("Test de plusieurs flags sur le meme argument : [%-18.4lo], [%-8lo], [%15.7lo]\n\n\n", lo, lo, lo); 
+
+	/*printf("\n%s flag 'bi'\n", test);
 
 
-	printf("\n%s flag 'bi'\n", test);
-
-
-	printf("\n%s flag 'ter'\n", test);
+	printf("\n%s flag 'ter'\n", test);*/
 
 
 	printf("\n%s flag 'i'\n", test);
-
+	ft_printf("Original = [%i]\n", i);
+	printf("Original = [%i]\n", i);
+	ft_printf("Test du flag ' ' : [% i]\n", i);
+	printf("Test du flag ' ' : [% i]\n", i);
+	ft_printf("Test du flag '+' : [%+i]\n", i);
+	printf("Test du flag '+' : [%+i]\n", i);
+	ft_printf("Test du flag '-' et de la long minimale du champ : [%12i] - [%-12i]\n", i, i);
+	printf("Test du flag '-' et de la long minimale du champ : [%12i] - [%-12i]\n", i, i);
+	ft_printf("Test de la precision : [%.1i] - [%.5i] - [%.15i]\n", i, i, i);
+	printf("Test de la precision : [%.1i] - [%.5i] - [%.15i]\n", i, i, i);
+	ft_printf("Tests multiples : [%-12.30i] - [%+20i] - [%8.15i] - [% .14i] - [% 14i] - [% 14.i]\n", i, i, i, i, i, i);
+	printf("Tests multiples : [%-12.30i] - [%+20i] - [%8.15i] - [% .14i] - [% 14i] - [% 14.i]\n", i, i, i, i, i, i);
 
 	printf("\n%s flag 'd'\n", test);
+	ft_printf("Original = [%d]\n", d);
+	printf("Original = [%d]\n", d);
+	ft_printf("Test du flag ' ' : [% d]\n", d);
+	printf("Test du flag ' ' : [% d]\n", d);
+	ft_printf("Test du flag '+' : [%+d]\n", d);
+	printf("Test du flag '+' : [%+d]\n", d);
+	ft_printf("Test du flag '-' et de la long minimale du champ : [%12d] - [%-12d]\n", d, d);
+	printf("Test du flag '-' et de la long minimale du champ : [%12d] - [%-12d]\n", d, d);
+	ft_printf("Test de la precision : [%.1d] - [%.5d] - [%.15d]\n", d, d, d);
+	printf("Test de la precision : [%.1d] - [%.5d] - [%.15d]\n", d, d, d);
+	ft_printf("Tests multiples : [%-12.30d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n", d, d, d, d, d, d);
+	printf("Tests multiples : [%-12.30d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n", d, d, d, d, d, d);
 
-
-	printf("\n%s flag 'D'\n", test);
+	/*printf("\n%s flag 'D'\n", test);
 
 
 	printf("\n%s flag 's'\n", test);
