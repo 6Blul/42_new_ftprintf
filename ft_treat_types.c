@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/31 08:30:48 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/02 08:07:10 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,20 +27,20 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	int		*tab;
 	char	*put;
 
-	tab = (int *)malloc(sizeof(int) * 6);
-	tab = fill_iflags(tab, copy, arg);
+	tab = (int *)malloc(sizeof(int) * 7);
+	tab = fill_iflags(tab, copy, (int)arg);
 	if (is_wchar(fmt))
 		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
 	if (*fmt == 'c')
-		put = ft_get_char((char)arg);
+		put = ft_get_char(((arg)));
 	else
-		put = ft_maxtoa(arg);
+		put = ft_maxtoa((int)arg);
 	if (*(fmt - 1) != '%')
 	{
 		while (is_let_flag(*(fmt--)))
 			put = ft_i_conversions(arg, put, fmt);
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, copy, 0);
+			put = ft_treat_prec(put, copy, 0, tab[6]);
 		if (put)
 			put = ft_i_sflags(put, tab, copy);
 		else
@@ -68,7 +68,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 			(*fmt)++;
 		}
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, copy, 0);
+			put = ft_treat_prec(put, copy, 0, tab[0]);
 		if (put)
 			put = ft_ui_sflags(put, tab, copy);
 		else
@@ -95,7 +95,7 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 		if (*(fmt - 1) != '%')
 		{
 			if (tab[0] == 1)
-				put = ft_treat_prec(put, copy, 1);
+				put = ft_treat_prec(put, copy, 1, tab[0]);
 			if (put)
 				put = ft_v_sflags(put, tab, fmt);
 		}

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/31 06:21:08 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/02 08:20:52 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,7 +33,7 @@ void		*ft_memset(void *b, int c, size_t len);
 void		ft_bzero(void *b, size_t len);
 char		*ft_strchr(char *s, int c);
 char		*ft_strdup(char *s1);
-int			*fill_iflags(int *tab, char *fmt, intmax_t arg);
+int			*fill_iflags(int *tab, char *fmt, int arg);
 int			*fill_uiflags(int *tab, char *fmt);
 int			*fill_vflags(int *tab, char *fmt);
 void		ft_adapt_char(int *tab);
@@ -61,7 +61,7 @@ char		*ft_base_convert(uintmax_t arg, char c);
 char		*ft_hexa(uintmax_t arg);
 char		*ft_ui_conversions(uintmax_t arg, char *put, char *fmt);
 char		*ft_i_conversions(intmax_t arg, char *put, char *fmt);
-char		*ft_treat_prec(char *put, char *fmt, int type);
+char		*ft_treat_prec(char *put, char *fmt, int type, int isneg);
 char		*ft_i_sflags(char *put, int *tab, char *fmt);
 char		*ft_ui_sflags(char *put, int *tab, char *fmt);
 char		*ft_v_sflags(char *put, int *tab, char *fmt);
@@ -72,15 +72,15 @@ char		*ft_sharpx(char *put);
 char		*ft_add_bef(char *put, char c);
 void		ft_putwchar(int *tab);
 int			ft_get_precision(char *fmt);
-int			ft_get_lm(char *fmt);
 int			ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st);
 int			ft_treat_wstr(char *fmt, int *tab, wchar_t *arg);
 int			*ft_split_bits(char *bits);
 void		ft_adjust(int lm);
 char		*ft_convers_void(char *fmt, int *tab, void *arg);
-char		*ft_treat_preint(int nb, char *pre, char *put);
+char		*ft_treat_preint(int nb, char *pre, char *put, int isneg);
 char		*ft_treat_prestr(int nb, char *pre, char *put);
 char		*ft_insta_uint(uintmax_t arg, char *fmt);
 char		*ft_ismod(int ismod, char *bin);
+int			ft_get_lm(char *fmt);
 
 #endif

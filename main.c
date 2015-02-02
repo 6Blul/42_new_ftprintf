@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/02 02:47:39 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/02 08:00:57 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,11 +43,11 @@ int		main(void)
 	retour1 = "Test du retour de printf : ";
 	test = "Test de :";
 	u = 731;
-	x = 354;
-	o = 13548;
+	x = 480;
+	o = 115;
 	lu = 10212;
-	lx = 24616;
-	lo = 27048;
+	lx = 24615;
+	lo = 27056;
 	/*bi = 478;
 	ter = 890;*/
 	i = 0;
@@ -180,10 +180,10 @@ int		main(void)
 	printf("Test du flag '+' : [%+d]\n\n", d);
 	ft_printf("Test du flag '-' et de la long minimale du champ : [%12d] - [%-12d]\n", d, d);
 	printf("Test du flag '-' et de la long minimale du champ : [%12d] - [%-12d]\n\n", d, d);
-	ft_printf("Test de la precision : [%.1d] - [%.5d] - [%.15d]\n", d, d, d);
-	printf("Test de la precision : [%.1d] - [%.5d] - [%.15d]\n\n", d, d, d);
-	ft_printf("Tests multiples : [%-12.30d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n", d, d, d, d, d, d);
-	printf("Tests multiples : [%-12.30d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n\n\n", d, d, d, d, d, d);
+	ft_printf("Test de la precision : [%.1d] - [%.5d] - [%.10d]\n", d, d, d);
+	printf("Test de la precision : [%.1d] - [%.5d] - [%.10d]\n\n", d, d, d);
+	ft_printf("Tests multiples : [%-12.15d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n", d, d, d, d, d, d);
+	printf("Tests multiples : [%-12.15d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n\n\n", d, d, d, d, d, d);
 
 	//printf("\n%s flag 'D'\n", test);
 

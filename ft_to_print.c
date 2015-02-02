@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/23 14:04:45 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/31 06:07:51 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/02 01:18:06 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ char	*put_blanks(char *s, int spaces, char *ret, int len)
 	i = 0;
 	j = 0;
 	nb = spaces - len;
-	while (i <= nb)
+	while (i < nb)
 		ret[i++] = ' ';
 	while (s[j])
 		ret[i++] = s[j++];
@@ -39,7 +39,7 @@ char	*put_zeros(char *s, int spaces, char *ret, int len)
 	i = 0;
 	j = 0;
 	nb = spaces - len;
-	while (i <= nb)
+	while (i < nb)
 		ret[i++] = '0';
 	while (s[j])
 		ret[i++] = s[j++];

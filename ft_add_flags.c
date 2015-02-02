@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/09 09:10:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/31 07:16:50 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/02 01:19:01 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,7 @@ char	*ft_left_align(int nb, char *put)
 	res = (char *)malloc(sizeof(char) * (nb + 1));
 	while (put[i])
 		res[j++] = put[i++];
-	while (j <= nb)
+	while (j < nb)
 	{
 		res[j] = ' ';
 		j++;
@@ -111,10 +111,8 @@ char	*ft_align(char *put, char *fmt, char c)
 		num[j++] = *(fmt++);
 	num[j] = 0;
 	nb = ft_atoi(num);
-	if (nb <= 0 || nb <= ft_strlen(put))
+	if (nb <= 0 || nb < (ft_strlen(put) + 1))
 		return (put);
-	else
-		nb -= 1;
 	if (c == '0' || c == ' ')
 		put = to_print(nb, put, c);
 	else if (c == 'l')

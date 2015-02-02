@@ -6,19 +6,26 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/29 02:07:05 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/02 08:10:26 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-char	*ft_treat_preint(int nb, char *pre, char *put)
+char	*ft_treat_preint(int nb, char *pre, char *put, int isneg)
 {
 	int		i;
 	int		len;
 	int		zer;
 
 	i = 0;
+	if (isneg == 1)
+	{
+		pre[i] = '-';
+		put = put + 1;
+		nb += 1;
+		i++;
+	}
 	len = ft_strlen(put);
 	zer = nb - len;
 	while (i < zer)
@@ -53,7 +60,20 @@ int		ft_get_precision(char *fmt)
 	return (nb);
 }
 
-char	*ft_treat_prec(char *put, char *fmt, int type)
+char	*which_return(char *put, int nb)
+{
+	if (nb > 0)
+		return (put);
+	else
+	{
+		put = (char *)malloc(sizeof(char) * 1 + 1);
+		put[0] = ' ';
+		put[1] = 0;
+	}
+	return (put);
+}
+
+char	*ft_treat_prec(char *put, char *fmt, int type, int isneg)
 {
 	char	*pre;
 	int		nb;
@@ -63,16 +83,19 @@ char	*ft_treat_prec(char *put, char *fmt, int type)
 	if (type == 0)
 	{
 		if (nb <= ft_strlen(put))
-			return (put);
+			return (which_return(put, nb));
 		else
-			pre = ft_treat_preint(nb, pre, put);
+			pre = ft_treat_preint(nb, pre, put, isneg);
 	}
 	else
 	{
-		if (nb == 0)
-			return (NULL);
-		else if (nb >= ft_strlen(put))
+		if (nb > ft_strlen(put))
 			return (put);
+		else if (nb == 0)
+		{
+			ft_bzero((void *)put, (size_t)ft_strlen(put));
+			return (put);
+		}
 		else
 			pre = ft_treat_prestr(nb - 1, pre, put);
 	}
