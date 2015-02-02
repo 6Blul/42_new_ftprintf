@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/02 08:07:10 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/02 08:35:16 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,7 +68,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 			(*fmt)++;
 		}
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, copy, 0, tab[0]);
+			put = ft_treat_prec(put, copy, 0, 0);
 		if (put)
 			put = ft_ui_sflags(put, tab, copy);
 		else
@@ -95,7 +95,7 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 		if (*(fmt - 1) != '%')
 		{
 			if (tab[0] == 1)
-				put = ft_treat_prec(put, copy, 1, tab[0]);
+				put = ft_treat_prec(put, copy, 1, 0);
 			if (put)
 				put = ft_v_sflags(put, tab, fmt);
 		}
