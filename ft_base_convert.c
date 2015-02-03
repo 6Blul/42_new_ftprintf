@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/12 02:37:38 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/03 23:52:55 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/03 23:55:36 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@ char	*ft_complete(char *bin)
 {
 	int		len;
 	char	*tp;
-	char 	*ret;
+	char	*ret;
 
 	len = ft_strlen(bin) + 1;
 	ret = (char *)malloc(sizeof(char) * len + 1);
