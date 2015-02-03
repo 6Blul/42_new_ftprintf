@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/02 08:35:16 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/03 04:46:24 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 	tab = (int *)malloc(sizeof(int) * 8);
 	if (*fmt == 'x' || *fmt == 'X' || *fmt == 'o' || *fmt == 'O')
 		tab[7] = 2;
-	tab = fill_uiflags(tab, copy);
+	tab = fill_uiflags(tab, copy, (unsigned int)arg);
 	put = ft_insta_uint(arg, fmt);
 	if (*(fmt - 1) != '%')
 	{

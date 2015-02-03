@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/02 08:20:52 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/03 04:46:54 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ void		ft_bzero(void *b, size_t len);
 char		*ft_strchr(char *s, int c);
 char		*ft_strdup(char *s1);
 int			*fill_iflags(int *tab, char *fmt, int arg);
-int			*fill_uiflags(int *tab, char *fmt);
+int			*fill_uiflags(int *tab, char *fmt, unsigned int arg);
 int			*fill_vflags(int *tab, char *fmt);
 void		ft_adapt_char(int *tab);
 int			is_convers_flag(char c);

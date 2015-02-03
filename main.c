@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/02 08:00:57 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/03 06:14:19 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,9 +42,9 @@ int		main(void)
 	retour = "Test du retour de ft_printf : ";
 	retour1 = "Test du retour de printf : ";
 	test = "Test de :";
-	u = 731;
-	x = 480;
-	o = 115;
+	u = 3554;
+	x = 834;
+	o = 304;
 	lu = 10212;
 	lx = 24615;
 	lo = 27056;
