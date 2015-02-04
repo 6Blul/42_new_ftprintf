@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/04 01:26:07 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/04 03:24:14 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 
 #include "ft_printf.h"
 #include <stdio.h>
+#include <limits.h>
 
 int		main(void)
 {
@@ -26,8 +27,8 @@ int		main(void)
 	long unsigned int 	lu; //lu long unsigned decimal
 	long unsigned int	lx;	//X unsigned decimal (as X)
 	long unsigned int	lo;	//lo long unsigned octal
-	/*unsigned int		bi;//b -> A tester sans le vrai PRINTF
-	unsigned int		ter;//t -> A tester sans le vrai PRINTF*/
+	unsigned int		bi;//b -> A tester sans le vrai PRINTF
+	unsigned int		ter;//t -> A tester sans le vrai PRINTF
 	int					i;//i signed decimal
 	int					d;//d signed decimal
 //	long int			dd;//D long signed decimal
@@ -48,14 +49,15 @@ int		main(void)
 	lu = 10212;
 	lx = 368;
 	lo = 27056;
-	/*bi = 478;
-	ter = 890;*/
+	bi = 478;
+	ter = 890;
 	i = 0;
-	d = -13;
+	d = -148;
 	//dd = 90102030;
 	s = "un enooorme chat bleu";
 	p = "je oui je oui je oui";
 	//c = 'L';
+
 
 	printf("\n%s flag 'u'\n", test);
 	ft_printf("Original = [%u]\n", u);
@@ -210,6 +212,16 @@ int		main(void)
 	printf("Test de la longueur minimale et du flag '-' : \n[%12p]\n[%1p]\n[%25p]\n[%-25p]\n[%-1p]\n[%-12p]\n\n\n", p, p, p, p, p, p);
 	
 
+
+
+
+	printf("\n%s flag 'b' && 's'\n", test);
+	printf("Nombre d'origine : BI = %u - TER = %u\n", bi, ter);
+	ft_printf("Nombre d'origine : BI = %u - TER = %u\n", bi, ter);
+	ft_printf("Conversion : BI = %b - TER = %t\n\n\n", bi, ter);
+	
+	
+	
 	//printf("\n%s flag 'c'\n", test);
 	return (0);
 }

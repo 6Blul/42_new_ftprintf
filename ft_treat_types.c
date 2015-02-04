@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/04 02:19:08 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/04 03:23:50 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -102,7 +102,7 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 				put = ft_v_sflags(put, tab, fmt);
 		}
 	}
-	free(tab);
+	free(tab);	
 	ft_putstr(put);
 	return (ft_strlen(put));
 }
