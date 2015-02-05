@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/02 08:10:26 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:01:07 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,11 +60,9 @@ int		ft_get_precision(char *fmt)
 	return (nb);
 }
 
-char	*which_return(char *put, int nb)
+char	*which_return(char *put)
 {
-	if (nb > 0)
-		return (put);
-	else
+	if (put[0] == '0' && !put[1])
 	{
 		put = (char *)malloc(sizeof(char) * 1 + 1);
 		put[0] = ' ';
@@ -83,7 +81,7 @@ char	*ft_treat_prec(char *put, char *fmt, int type, int isneg)
 	if (type == 0)
 	{
 		if (nb <= ft_strlen(put))
-			return (which_return(put, nb));
+			return (which_return(put));
 		else
 			pre = ft_treat_preint(nb, pre, put, isneg);
 	}

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 03:35:47 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:00:32 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int		main(void)
 //	long int			dd;//D long signed decimal
 	char				*s;//s char *
 	char				*p;//p void *
-//	char				c;//c char*/
+	char				c;//c char
 	char				*retour;
 	char				*retour1;
 	int					res;
@@ -52,11 +52,11 @@ int		main(void)
 	bi = 478;
 	ter = 890;
 	i = 0;
-	d = -148;
+	d = 155;
 	//dd = 90102030;
 	s = "un enooorme chat bleu";
 	p = "je oui je oui je oui";
-	//c = 'L';
+	c = 'L';
 
 
 	printf("\n%s flag 'u'\n", test);
@@ -182,8 +182,8 @@ int		main(void)
 	printf("Test du flag '+' : [%+d]\n\n", d);
 	ft_printf("Test du flag '-' et de la long minimale du champ : [%12d] - [%-12d]\n", d, d);
 	printf("Test du flag '-' et de la long minimale du champ : [%12d] - [%-12d]\n\n", d, d);
-	ft_printf("Test de la precision : [%.1d] - [%.5d] - [%.10d]\n", d, d, d);
-	printf("Test de la precision : [%.1d] - [%.5d] - [%.10d]\n\n", d, d, d);
+	ft_printf("Test de la precision : [%.1d] - [%.5d] - [%.10d] - [%.0d]\n", d, d, d, d);
+	printf("Test de la precision : [%.1d] - [%.5d] - [%.10d] - [%.0d]\n\n", d, d, d, d);
 	ft_printf("Tests multiples : [%-12.15d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n", d, d, d, d, d, d);
 	printf("Tests multiples : [%-12.15d] - [%+20d] - [%8.15d] - [% .14d] - [% 14d] - [% 14.d]\n\n\n", d, d, d, d, d, d);
 
@@ -210,8 +210,6 @@ int		main(void)
 	printf("Original = [%p]\n\n", p);
 	ft_printf("Test de la longueur minimale et du flag '-' : \n[%12p]\n[%1p]\n[%25p]\n[%-25p]\n[%-1p]\n[%-12p]\n", p, p, p, p, p, p);
 	printf("Test de la longueur minimale et du flag '-' : \n[%12p]\n[%1p]\n[%25p]\n[%-25p]\n[%-1p]\n[%-12p]\n\n\n", p, p, p, p, p, p);
-	
-
 
 
 
@@ -222,6 +220,8 @@ int		main(void)
 	
 	
 	
-	//printf("\n%s flag 'c'\n", test);
+	printf("\n%s flag 'c'\n", test);
+	ft_printf("Char d'origine : [%c]\n", c);
+	printf("Char d'origine : [%c]\n\n\n", c);
 	return (0);
 }
