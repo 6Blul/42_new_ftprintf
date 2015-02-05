@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 08:32:06 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 08:36:01 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -151,14 +151,6 @@ int		main(void)
 
 
 
-	/*printf("\n%s flag 'bi'\n", test);
-
-
-
-	printf("\n%s flag 'ter'\n", test);*/
-
-
-
 	printf("\n%s flag 'i'\n", test);
 	ft_printf("Original = [%i]\n", i);
 	printf("Original = [%i]\n\n", i);
@@ -251,7 +243,7 @@ int		main(void)
 	ft_printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
 	printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
 	ft_printf("Test des flag j/z : [%ji] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
-	printf("Test des flag j/z : [%i] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
+	printf("Test des flag j/z : [%ji] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
 	
 	
 	return (0);
