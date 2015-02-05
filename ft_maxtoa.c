@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 19:18:39 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 05:19:37 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:02:00 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ void	ft_put_in(char *res, unsigned int i, intmax_t n)
 	}
 }
 
-char	*ft_maxtoa(intmax_t n) 
+char	*ft_maxtoa(intmax_t n)
 {
 	char		*conv;
 	size_t		len;
