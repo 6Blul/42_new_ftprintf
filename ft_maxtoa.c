@@ -6,14 +6,14 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/03 19:18:39 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 06:02:00 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 07:45:02 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 #include <stdlib.h>
 
-void	ft_put_in(char *res, unsigned int i, intmax_t n)
+void	ft_put_in(char *res, unsigned int i, int n)
 {
 	if (n >= 10 || n <= -10)
 	{
@@ -32,11 +32,11 @@ void	ft_put_in(char *res, unsigned int i, intmax_t n)
 	}
 }
 
-char	*ft_maxtoa(intmax_t n)
+char	*ft_maxtoa(int n)
 {
 	char		*conv;
 	size_t		len;
-	intmax_t	nb;
+	int			nb;
 
 	conv = NULL;
 	nb = n;

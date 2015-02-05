@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 08:52:20 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 05:08:55 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:49:06 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ int			ft_treat_int(char *fmt, intmax_t arg, char *copy);
 int			ft_treat_uint(char *fmt, uintmax_t arg, char *copy);
 int			ft_treat_void(char *fmt, void *arg, char *copy);
 char		*ft_uinmaxtoa(uintmax_t n);
-char		*ft_maxtoa(intmax_t n);
+char		*ft_maxtoa(int n);
 short		ft_h_i(intmax_t arg);
 signed char	ft_hh_i(intmax_t arg);
 long		ft_l_i(intmax_t arg);
@@ -67,7 +67,7 @@ char		*ft_i_sflags(char *put, int *tab, char *fmt);
 char		*ft_ui_sflags(char *put, int *tab, char *fmt);
 char		*ft_v_sflags(char *put, int *tab, char *fmt);
 char		*to_print(int width, char *conv, char c);
-char		*ft_align(char *put, char *fmt, char c);
+char		*ft_align(char *put, char *fmt, char c, char type);
 char		*ft_sharpo(char *put);
 char		*ft_sharpx(char *put);
 char		*ft_add_bef(char *put, char c);

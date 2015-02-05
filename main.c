@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 06:00:32 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 08:07:33 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,8 +51,8 @@ int		main(void)
 	lo = 27056;
 	bi = 478;
 	ter = 890;
-	i = 0;
-	d = 155;
+	i = 25;
+	d = -148;
 	//dd = 90102030;
 	s = "un enooorme chat bleu";
 	p = "je oui je oui je oui";
@@ -201,7 +201,7 @@ int		main(void)
 	res = ft_printf("Tests multiples : [%15.5s]\n[%5.15s]\n[%30.5s]\n[%5.30s]\n", s, s, s, s);
 	res1 = printf("Tests multiples : [%15.5s]\n[%5.15s]\n[%30.5s]\n[%5.30s]\n\n\n", s, s, s, s);
 	printf("%s%i\n", retour, res);
-	printf("%s%i\n\n", retour1, res1);
+	printf("%s%i\n\n", retour1, res1 - 2);
 
 
 
@@ -211,13 +211,10 @@ int		main(void)
 	ft_printf("Test de la longueur minimale et du flag '-' : \n[%12p]\n[%1p]\n[%25p]\n[%-25p]\n[%-1p]\n[%-12p]\n", p, p, p, p, p, p);
 	printf("Test de la longueur minimale et du flag '-' : \n[%12p]\n[%1p]\n[%25p]\n[%-25p]\n[%-1p]\n[%-12p]\n\n\n", p, p, p, p, p, p);
 
-
-
 	printf("\n%s flag 'b' && 's'\n", test);
 	printf("Nombre d'origine : BI = %u - TER = %u\n", bi, ter);
 	ft_printf("Nombre d'origine : BI = %u - TER = %u\n", bi, ter);
 	ft_printf("Conversion : BI = [%b] - TER = [%t]\n\n\n", bi, ter);
-	
 	
 	
 	printf("\n%s flag 'c'\n", test);

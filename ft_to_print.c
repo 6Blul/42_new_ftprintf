@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2014/12/23 14:04:45 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/02 01:18:06 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 07:43:11 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*to_print(int width, char *conv, char c)
 
 	len = ft_strlen(conv);
 	ret = (char *)malloc(sizeof(char) * width + 1);
-	if (len >= width)
+	if (len > width)
 		return (conv);
 	else
 	{

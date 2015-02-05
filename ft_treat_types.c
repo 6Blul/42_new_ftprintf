@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 05:21:24 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 07:12:53 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,10 +34,10 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	if (*fmt == 'c')
 		put = ft_get_char((arg));
 	else
-		put = ft_maxtoa((int)arg);
+		put = ft_maxtoa(arg);
 	if (*(fmt - 1) != '%')
 	{
-		while (is_let_flag(*(fmt--)))
+		while (is_let_flag(*(fmt--)) || is_sign_flag(*(fmt--)))
 			put = ft_i_conversions(arg, put, fmt);
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, copy, 0, tab[6]);

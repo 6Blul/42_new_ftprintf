@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:15:15 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 06:02:11 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 07:11:30 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ char	*ft_i_conversions(intmax_t arg, char *put, char *fmt)
 		else if (*fmt == 'z')
 			put = ft_maxtoa(ft_z_i(arg));
 		else
-			return (ft_uinmaxtoa(arg));
+			return (ft_maxtoa(arg));
 	}
 	passed = 1;
 	return (put);

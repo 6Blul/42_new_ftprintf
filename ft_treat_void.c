@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/23 19:37:43 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/28 23:42:57 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:49:55 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,9 +23,9 @@ char	*ft_convers_void(char *fmt, int *tab, void *arg)
 	if (tab[1] == 1)
 	{
 		if (tab[2] == 1)
-			put = ft_align(put, fmt, 'l');
+			put = ft_align(put, fmt, 'l', 'v');
 		else
-			put = ft_align(put, fmt, ' ');
+			put = ft_align(put, fmt, ' ', 'v');
 	}
 	return (put);
 }

@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:56:19 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 05:49:07 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 06:41:21 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,8 +64,6 @@ int		*fill_iflags(int *tab, char *fmt, int arg)
 			tab[1] = 1;
 		if (*fmt == ' ' && arg >= 0)
 			tab[2] = 1;
-		if (ft_isdigit(*fmt) && (*(fmt - 1)) != '.' && !ft_isdigit(*(fmt + 1)))
-			tab[3] = 1;
 		if (*fmt == '-')
 			tab[4] = 1;
 		if (*fmt == '0' && !ft_isdigit(*(fmt - 1)) && tab[0] == 0)
@@ -77,6 +75,7 @@ int		*fill_iflags(int *tab, char *fmt, int arg)
 		tab[5] = 0;
 	if (arg < 0)
 		tab[6] = 1;
+	tab[3] = is_lm(fmt);
 	if (*(fmt - 1) == 'c')
 		ft_adapt_char(tab);
 	return (tab);
@@ -91,13 +90,12 @@ int		*fill_uiflags(int *tab, char *fmt, unsigned int arg)
 			tab[0] = 1;
 		if (*fmt == '#' && arg >= 1)
 			tab[3] = 1;
-		if (ft_isdigit(*fmt) && (*(fmt - 1)) != '.' && !ft_isdigit(*(fmt + 1)))
-			tab[4] = 1;
 		if (*fmt == '-')
 			tab[5] = 1;
 		if (*fmt == '0' && !ft_isdigit(*(fmt - 1)) && tab[0] == 0)
 			tab[6] = 1;
 	}
+	tab[4] = is_lm(fmt);
 	if (tab[5] == 1 && tab[6] == 1)
 		tab[6] = 0;
 	return (tab);
