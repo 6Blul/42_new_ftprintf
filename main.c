@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/05 08:07:33 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 08:32:06 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ int		main(void)
 	lo = 27056;
 	bi = 478;
 	ter = 890;
-	i = 25;
+	i = -425;
 	d = -148;
 	//dd = 90102030;
 	s = "un enooorme chat bleu";
@@ -220,5 +220,39 @@ int		main(void)
 	printf("\n%s flag 'c'\n", test);
 	ft_printf("Char d'origine : [%c]\n", c);
 	printf("Char d'origine : [%c]\n\n\n", c);
+	
+
+	char				hhi;
+	unsigned char		hhu;
+	short				hi;
+	unsigned short		hu;
+	long				li;
+	unsigned long		ulu;
+	long long			lli;
+	unsigned long long	llu;
+	intmax_t			imt;
+	uintmax_t			uimt;
+	size_t				st;
+
+	hhi = 'C';
+	hhu = 'C';
+	hi = 15;
+	hu = 25;
+	li = -9474950;
+	ulu = 9474950;
+	lli = -123456789;
+	llu = 123456789;
+	imt = -7777777;
+	uimt = 9999999;
+	st = 670;
+	printf("\n%s flags 'l' 'll' 'h' 'hh' 'z'\n", test);
+	ft_printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
+	printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
+	ft_printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
+	printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
+	ft_printf("Test des flag j/z : [%ji] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
+	printf("Test des flag j/z : [%i] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
+	
+	
 	return (0);
 }
