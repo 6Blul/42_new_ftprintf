@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/04 03:24:14 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 03:35:47 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -218,7 +218,7 @@ int		main(void)
 	printf("\n%s flag 'b' && 's'\n", test);
 	printf("Nombre d'origine : BI = %u - TER = %u\n", bi, ter);
 	ft_printf("Nombre d'origine : BI = %u - TER = %u\n", bi, ter);
-	ft_printf("Conversion : BI = %b - TER = %t\n\n\n", bi, ter);
+	ft_printf("Conversion : BI = [%b] - TER = [%t]\n\n\n", bi, ter);
 	
 	
 	

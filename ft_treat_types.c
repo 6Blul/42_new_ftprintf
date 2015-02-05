@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 10:37:42 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/04 03:23:50 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/05 03:33:44 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,7 +46,6 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 		else
 			return (0);
 	}
-	free(tab);
 	ft_putstr(put);
 	return (ft_strlen(put));
 }
@@ -75,7 +74,6 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 		else
 			return (0);
 	}
-	free(tab);
 	ft_putstr(put);
 	return (ft_strlen(put));
 }
@@ -102,7 +100,6 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 				put = ft_v_sflags(put, tab, fmt);
 		}
 	}
-	free(tab);	
 	ft_putstr(put);
 	return (ft_strlen(put));
 }
