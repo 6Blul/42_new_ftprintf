@@ -60,14 +60,10 @@ int		ft_get_precision(char *fmt)
 	return (nb);
 }
 
-char	*which_return(char *put)
+char	*which_return(char *put, int nb)
 {
-	if (put[0] == '0' && !put[1])
-	{
-		put = (char *)malloc(sizeof(char) * 1 + 1);
-		put[0] = ' ';
-		put[1] = 0;
-	}
+	if (put[0] == '0' && nb == 0)
+		ft_bzero(put, 2);
 	return (put);
 }
 
@@ -81,7 +77,7 @@ char	*ft_treat_prec(char *put, char *fmt, int type, int isneg)
 	if (type == 0)
 	{
 		if (nb <= ft_strlen(put) - 1)
-			return (which_return(put));
+			return (which_return(put, nb));
 		else
 			pre = ft_treat_preint(nb, pre, put, isneg);
 	}

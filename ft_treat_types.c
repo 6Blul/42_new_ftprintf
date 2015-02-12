@@ -37,8 +37,9 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 		put = ft_maxtoa(arg);
 	if (*(fmt - 1) != '%')
 	{
-		while (is_let_flag(*(fmt--)) || is_sign_flag(*(fmt--)))
-			put = ft_i_conversions(arg, put, fmt);
+		put = ft_i_conversions(arg, put, fmt - 1);
+		while (is_let_flag(*fmt) || is_sign_flag(*fmt))
+			fmt--;
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, copy, 0, tab[6]);
 		if (put)
@@ -62,11 +63,9 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 	put = ft_insta_uint(arg, fmt);
 	if (*(fmt - 1) != '%')
 	{
+		put = ft_ui_conversions(arg, put, fmt - 1);
 		while (is_let_flag(*fmt))
-		{
-			put = ft_ui_conversions(arg, put, fmt);
-			(*fmt)++;
-		}
+			fmt--;
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, copy, 0, 0);
 		if (put)

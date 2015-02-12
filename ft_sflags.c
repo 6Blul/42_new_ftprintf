@@ -36,7 +36,7 @@ char	*ft_ui_sflags(char *put, int *tab, char *fmt)
 
 	temp = fmt;
 	while (is_convers_flag(*temp) != 2)
-		temp = temp + 1;
+		temp++;
 	if (tab[1] == 1)
 		put = ft_add_bef(put, '+');
 	else if (tab[2] == 1)

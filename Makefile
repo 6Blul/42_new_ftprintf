@@ -17,7 +17,6 @@ SRC = ft_add_flags.c		\
 	  ft_base_convert.c		\
 	  ft_bzero.c			\
 	  ft_fill_tab.c			\
-	  ft_fst_flags.c		\
 	  ft_get_char.c			\
 	  ft_get_lm.c			\
 	  ft_hexa_convert.c		\
