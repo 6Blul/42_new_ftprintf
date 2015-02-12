@@ -30,8 +30,10 @@ char	*ft_insta_uint(uintmax_t arg, char *fmt)
 		return (ft_arg_is_zero());
 	while (is_convers_flag(*fmt) == 0)
 		(*fmt)++;
-	if (*fmt == 'o' || *fmt == 'O')
+	if (*fmt == 'o')
 		put = ft_base_convert(arg, 'o');
+	else if (*fmt == 'O')
+		put = ft_base_convert((long unsigned int)arg, 'o');
 	else if (*fmt == 'b')
 		put = ft_base_convert(arg, 'b');
 	else if (*fmt == 't')
