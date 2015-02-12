@@ -19,6 +19,7 @@ SRC = ft_add_flags.c		\
 	  ft_fill_tab.c			\
 	  ft_get_char.c			\
 	  ft_get_lm.c			\
+	  ft_get_types.c 		\
 	  ft_hexa_convert.c		\
 	  ft_isdigit.c			\
 	  ft_maxtoa.c			\

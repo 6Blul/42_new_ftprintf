@@ -232,10 +232,10 @@ int		main(void)
 	hu = 25;
 	li = -947495550;
 	ulu = 9474955550;
-	lli = -12345678559;
+	lli = -123456785999;
 	llu = 12345678559;
-	imt = -7777777;
-	uimt = 9999999;
+	imt = -777776667677;
+	uimt = 9999976767799;
 	st = -670;
 	printf("\n%s flags 'l' 'll' 'h' 'hh' 'z'\n", test);
 	ft_printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
@@ -244,7 +244,6 @@ int		main(void)
 	printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
 	ft_printf("Test des flag j/z : [%ji] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
 	printf("Test des flag j/z : [%ji] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
-	
-	
+
 	return (0);
 }

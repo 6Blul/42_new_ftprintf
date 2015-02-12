@@ -34,7 +34,7 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	if (*fmt == 'c')
 		put = ft_get_char((arg));
 	else
-		put = ft_maxtoa(arg);
+		put = ft_get_itypes(arg, *fmt);
 	if (*(fmt - 1) != '%')
 	{
 		put = ft_i_conversions(arg, put, fmt - 1);
@@ -64,7 +64,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 	if (*(fmt - 1) != '%')
 	{
 		put = ft_ui_conversions(arg, put, fmt - 1);
-		while (is_let_flag(*fmt))
+		while (is_let_flag(*fmt) || is_sign_flag(*fmt))
 			fmt--;
 		if (tab[0] == 1)
 			put = ft_treat_prec(put, copy, 0, 0);

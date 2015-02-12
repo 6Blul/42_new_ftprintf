@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 
-void	ft_put_in(char *res, unsigned int i, int n)
+void	ft_put_in(char *res, unsigned int i, intmax_t n)
 {
 	if (n >= 10 || n <= -10)
 	{
@@ -32,11 +32,11 @@ void	ft_put_in(char *res, unsigned int i, int n)
 	}
 }
 
-char	*ft_maxtoa(int n)
+char	*ft_maxtoa(intmax_t n)
 {
 	char		*conv;
 	size_t		len;
-	int			nb;
+	intmax_t	nb;
 
 	conv = NULL;
 	nb = n;
