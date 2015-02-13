@@ -82,6 +82,8 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 	int		*tab;
 	char	*put;
 
+	if (arg == NULL)
+		return (ft_treat_null(*fmt));
 	tab = (int *)malloc(sizeof(int) * 3);
 	tab = fill_vflags(tab, copy);
 	if (is_wstr(fmt))

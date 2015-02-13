@@ -12,17 +12,18 @@
 
 #include "ft_printf.h"
 
-int		ft_written_char(char s, int ct)
+int		ft_written_char(char *s, int ct)
 {
-	ft_putchar(s);
+	if (*(s - 1) == '%' && *s == '%')
+		return (ct);
+	ft_putchar(*s);
 	return (ct + 1);
 }
 
 char	*ft_go_to(char *s)
 {
-	while (is_convers_flag(*(s++)) == 0)
-		;
-	s = s - 1;
+	while (is_convers_flag(*s) == 0)
+		s++;
 	return (s);
 }
 
@@ -69,7 +70,7 @@ int		ft_printf(const char *format, ...)
 	s = ft_strdup((char *)format);
 	while (*s)
 	{
-		if (*s == '%')
+		if (*s == '%' && *(s + 1) != '%' && *(s - 1) != '%')
 		{
 			s = ft_go_to(s);
 			if (is_convers_flag(*s) == 1)
@@ -81,7 +82,7 @@ int		ft_printf(const char *format, ...)
 			s = ft_cut_fmt(s);
 		}
 		else
-			ct = ft_written_char(*(s++), ct);
+			ct = ft_written_char(s++, ct);
 	}
 	va_end(ap);
 	return (ct);

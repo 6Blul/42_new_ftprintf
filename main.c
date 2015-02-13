@@ -52,7 +52,7 @@ int		main(void)
 	o = 304;
 	lu = 10212;
 	lx = 3609098989808;
-	lo = 270989898956;
+	lo = 27098989896;
 	bi = 478;
 	ter = 890;
 	i = -4250909;
@@ -60,7 +60,7 @@ int		main(void)
 	dd = 90102030;
 	uu = 10212;
 	xx = 3609098989808;
-	oo = 270989898956;
+	oo = 27098989896;
 	ld = 90102030;
 	s = "un enooorme chat bleu";
 	p = "je oui je oui je oui";
@@ -259,6 +259,7 @@ int		main(void)
 
 
 
+
 	printf("\n%s flag 'p'\n", test);
 	ft_printf("Original = [%p]\n", p);
 	printf("Original = [%p]\n\n", p);
@@ -292,11 +293,12 @@ int		main(void)
 	intmax_t			imt;
 	uintmax_t			uimt;
 	size_t				st;
-	unsigned long 		llb;
 	unsigned long 		lb;
-	unsigned long 		llt;
 	unsigned long 		lt;
+	char 				*pd;
 
+
+	pd = NULL;
 	hhi = 'C';
 	hhu = 'C';
 	hi = -15;
@@ -309,9 +311,7 @@ int		main(void)
 	uimt = 9999976767799;
 	st = -670;
 	lt = 943874;
-	llt = 9434466874;
 	lb = 484885;
-	llb = 48455566685;
 	printf("\n%s flags 'l' 'll' 'h' 'hh' 'z'\n", test);
 	ft_printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
 	printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
@@ -320,9 +320,21 @@ int		main(void)
 	ft_printf("Test des flags j/z : [%ji] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
 	printf("Test des flags j/z : [%ji] [%ju] [%zi] [%zu]\n\n", imt, uimt, st, st);
 	
-	printf("Test des flags sur 't' && 'b'\n");
-	ft_printf("Tests sur 'b' :  %lb - %llb\n", lb, llb);
-	ft_printf("Tests sur 't' :  %lt - %llt\n\n", lt, llt);
+	printf("Test du flag 'l' sur 't' && 'b'\n");
+	ft_printf("Tests sur 'b' :  %lb\n", lb);
+	ft_printf("Tests sur 't' :  %lt\n\n", lt);
+
+	printf("Test d'un pointeur null avec 's' puis 'p'\n");
+	printf("Suce : %s\n", pd);
+	ft_printf("Suce : %s\n", pd);
+	printf("Suce : %p\n", pd);
+	ft_printf("Suce : %p\n\n", pd);
+
+	res = ft_printf("%%\n");
+	res1 = printf("%%\n");
+	printf("%s%i\n", retour, res);
+	printf("%s%i\n\n", retour1, res1);
+
 
 	return (0);
 }
