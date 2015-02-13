@@ -45,9 +45,9 @@ int		ft_define_tab(char *bits)
 	int		nb;
 
 	len = ft_strlen(bits);
-	if (len <= 8)
+	if (len <= 7)
 		nb = 1;
-	else if (len > 8 && len <= 16)
+	else if (len > 7 && len <= 16)
 		nb = 2;
 	else if (len > 16 && len <= 24)
 		nb = 3;

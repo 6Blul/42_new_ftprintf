@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/20 14:38:05 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/21 09:51:16 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/13 13:41:20 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ char	*ft_troncate(char *put, char *fmt)
 	int		i;
 
 	i = 0;
-	while (*fmt != '.' || fmt != '%')
+	while (*fmt != '.' || *fmt != '%')
 		*fmt--;
 	if (!ft_isdigit(*fmt + 1) || *fmt == '%')
 		return (put);

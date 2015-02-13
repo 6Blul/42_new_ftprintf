@@ -49,7 +49,7 @@ int		main(void)
 	test = "Test de :";
 	u = 3554;
 	x = 834444444;
-	o = 304;
+	o = 42;
 	lu = 10212;
 	lx = 3609098989808;
 	lo = 27098989896;
@@ -62,7 +62,7 @@ int		main(void)
 	xx = 3609098989808;
 	oo = 27098989896;
 	ld = 90102030;
-	s = "un enooorme chat bleu";
+	s = "abc";
 	p = "je oui je oui je oui";
 	c = 'L';
 
@@ -246,8 +246,10 @@ int		main(void)
 
 
 	printf("\n%s flag 's'\n", test);
-	ft_printf("Original = [%s]\n", s);
-	printf("Original = [%s]\n\n", s);
+	ft_printf("%s", s);
+	printf("\n");
+	printf("%s", s);
+	printf("\n");
 	ft_printf("Test de la long. minimale et du flag '-' : \n[%12s]\n[%1s]\n[%25s]\n[%-25s]\n[%-12s]\n", s, s, s, s, s);
 	printf("Test de la long. minimale et du flag '-' : \n[%12s]\n[%1s]\n[%25s]\n[%-25s]\n[%-12s]\n\n", s, s, s, s, s);
 	ft_printf("Test de la precision : [%.25s]\n[%.5s]\n[%.s]\n", s, s, s);
@@ -330,10 +332,20 @@ int		main(void)
 	printf("Suce : %p\n", pd);
 	ft_printf("Suce : %p\n\n", pd);
 
+	printf("Test de deux pourcents && multi pourcent (non existant dans printf)\n");
 	res = ft_printf("%%\n");
 	res1 = printf("%%\n");
 	printf("%s%i\n", retour, res);
-	printf("%s%i\n\n", retour1, res1);
+	printf("%s%i\n", retour1, res1);
+	res = ft_printf("%%%%%%%%%%");
+	printf("\n");
+	res = ft_printf("%");
+	printf("\n");
+	res = ft_printf("% Zoooo\n");
+	printf("\n");
+	res = ft_printf("{%}\n");
+	printf("\n");
+	res = ft_printf("{% %}\n");
 
 
 	return (0);

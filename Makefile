@@ -37,13 +37,14 @@ SRC = ft_add_flags.c		\
 	  ft_strrev.c			\
 	  ft_to_print.c			\
 	  ft_treat_instauint.c	\
+	  ft_treat_null.c 		\
 	  ft_treat_prec.c		\
 	  ft_treat_types.c		\
 	  ft_treat_void.c		\
 	  ft_types.c			\
 	  ft_uinmaxtoa.c		\
 	  ft_wchrtreat.c		\
-	  main.c				\
+	  main.c 				\
 
 OBJ = $(SRC:.c=.o) 
 

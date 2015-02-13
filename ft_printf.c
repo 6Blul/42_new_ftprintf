@@ -14,15 +14,16 @@
 
 int		ft_written_char(char *s, int ct)
 {
-	if (*(s - 1) == '%' && *s == '%')
+	if (*(s - 1) && *(s - 1) == '%' && *s == '%')
 		return (ct);
-	ft_putchar(*s);
+	else
+		ft_putchar(*s);
 	return (ct + 1);
 }
 
 char	*ft_go_to(char *s)
 {
-	while (is_convers_flag(*s) == 0)
+	while (is_convers_flag(*s) == 0 && *s)
 		s++;
 	return (s);
 }
@@ -70,7 +71,7 @@ int		ft_printf(const char *format, ...)
 	s = ft_strdup((char *)format);
 	while (*s)
 	{
-		if (*s == '%' && *(s + 1) != '%' && *(s - 1) != '%')
+		if (*s == '%' && *(s - 1) != '%')
 		{
 			s = ft_go_to(s);
 			if (is_convers_flag(*s) == 1)

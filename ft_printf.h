@@ -24,7 +24,7 @@ int			ft_printf(const char *format, ...);
 char		*ft_full_fmt(char *s);
 char		*ft_go_to(char *s);
 char		*ft_cut_fmt(char *s);
-int			ft_written_char(char s, int ct);
+int			ft_written_char(char *s, int ct);
 int			ft_atoi(char *str);
 int			ft_strlen(char *s);
 int			ft_isdigit(char c);
@@ -46,7 +46,7 @@ char		*ft_strrev(char *s);
 int			ft_treat_int(char *fmt, intmax_t arg, char *copy);
 int			ft_treat_uint(char *fmt, uintmax_t arg, char *copy);
 int			ft_treat_void(char *fmt, void *arg, char *copy);
-char 		*ft_get_itypes(intmax_t arg, char c);
+char		*ft_get_itypes(intmax_t arg, char c);
 char		*ft_get_utypes(uintmax_t arg, char c);
 char		*ft_uinmaxtoa(uintmax_t n);
 char		*ft_maxtoa(intmax_t n);
@@ -81,5 +81,6 @@ char		*ft_insta_uint(uintmax_t arg, char *fmt);
 int			ft_get_lm(char *fmt);
 int			is_lm(char *fmt);
 char		*ft_complete(char *bin);
+int 		ft_treat_null(char c);
 
 #endif
