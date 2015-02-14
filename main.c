@@ -62,14 +62,16 @@ int		main(void)
 	xx = 3609098989808;
 	oo = 27098989896;
 	ld = 90102030;
-	s = "abc";
+	s = "Un enoooorme chat bleu";
 	p = "je oui je oui je oui";
 	c = 'L';
 
 
 	printf("\n%s flag 'u'\n", test);
-	ft_printf("Original = [%u]\n", u);
-	printf("Original = [%u]\n\n", u);
+	ft_printf("%u", u);
+	ft_printf("\n");
+	printf("%u", u);
+	printf("\n");
 	ft_printf("Test du flag '0' : [%0u], [%015u], [%04u]\n", u, u, u);
 	printf("Test du flag '0' : [%0u], [%015u], [%04u]\n\n", u, u, u);
 	ft_printf("Test du flag '-' et de la longueur minimale du champ : [%18u], [%3u], [%-22u], [%3u]\n", u, u, u, u);
@@ -333,8 +335,10 @@ int		main(void)
 	ft_printf("Suce : %p\n\n", pd);
 
 	printf("Test de deux pourcents && multi pourcent (non existant dans printf)\n");
-	res = ft_printf("%%\n");
-	res1 = printf("%%\n");
+	res = ft_printf("%%");
+	printf("\n");
+	res1 = printf("%%");
+	printf("\n");
 	printf("%s%i\n", retour, res);
 	printf("%s%i\n", retour1, res1);
 	res = ft_printf("%%%%%%%%%%");

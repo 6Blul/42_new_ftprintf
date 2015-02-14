@@ -14,7 +14,9 @@
 
 int		ft_written_char(char *s, int ct)
 {
-	if (*(s - 1) && *(s - 1) == '%' && *s == '%')
+	if (*s == '%')
+		return (ct + ft_treat_percent(s));
+	else if (*s == ' ' && *(s - 1) == '%')
 		return (ct);
 	else
 		ft_putchar(*s);
@@ -35,7 +37,7 @@ char	*ft_cut_fmt(char *s)
 
 	j = 0;
 	s = ft_go_to(s);
-	s = s + 1;
+	s += 1;
 	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	while (*s)
 		res[j++] = *(s++);
@@ -71,7 +73,7 @@ int		ft_printf(const char *format, ...)
 	s = ft_strdup((char *)format);
 	while (*s)
 	{
-		if (*s == '%' && *(s - 1) != '%')
+		if (ft_isvalid(s))
 		{
 			s = ft_go_to(s);
 			if (is_convers_flag(*s) == 1)

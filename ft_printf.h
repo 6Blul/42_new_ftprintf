@@ -82,5 +82,7 @@ int			ft_get_lm(char *fmt);
 int			is_lm(char *fmt);
 char		*ft_complete(char *bin);
 int 		ft_treat_null(char c);
+int 		ft_isvalid(char *s);
+int			ft_treat_percent(char *s);
 
 #endif

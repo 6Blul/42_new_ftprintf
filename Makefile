@@ -22,6 +22,7 @@ SRC = ft_add_flags.c		\
 	  ft_get_types.c 		\
 	  ft_hexa_convert.c		\
 	  ft_isdigit.c			\
+	  ft_isvalid.c 			\
 	  ft_maxtoa.c			\
 	  ft_memset.c			\
 	  ft_nb_conversions.c	\
