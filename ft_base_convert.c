@@ -35,7 +35,7 @@ char	*ft_complete(char *bin)
 
 int		define_conv(char c)
 {
-	if (c == 'b')
+	if (c == 'b' || c == 'P')
 		return (2);
 	else if (c == 't')
 		return (3);
@@ -56,7 +56,7 @@ char	*ft_base_convert(uintmax_t arg, char c)
 	while (arg > 0)
 	{
 		tp += (arg % nb);
-		if (arg % nb == 0 && c != 'b')
+		if (arg % nb == 0 && c != 'P')
 			add = 1;
 		arg /= nb;
 		if (arg > 0)

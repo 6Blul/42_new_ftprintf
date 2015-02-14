@@ -82,7 +82,7 @@ int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)
 		ft_adjust(lm);
 	if (pre != 0)
 	{
-		bin = ft_base_convert((int)arg, 'b');
+		bin = ft_base_convert((int)arg, 'P');
 		bits = ft_split_bits(bin);
 		ft_putwchar(bits);
 		if (tab[3] == 1 && tab[4] == 1 && st == 0)
