@@ -68,11 +68,11 @@ char		*ft_align(char *put, char *fmt, char c, char type);
 char		*ft_sharpo(char *put);
 char		*ft_sharpx(char *put);
 char		*ft_add_bef(char *put, char c);
-void		ft_putwchar(int *tab);
-int			ft_get_precision(char *fmt);
+void		ft_putwchar(char **tab);
+int			ft_get_wprecision(char *fmt);
 int			ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st);
 int			ft_treat_wstr(char *fmt, int *tab, wchar_t *arg);
-int			*ft_split_bits(char *bits);
+char		**ft_split_bits(char *bits);
 void		ft_adjust(int lm);
 char		*ft_convers_void(char *fmt, int *tab, void *arg);
 char		*ft_treat_preint(int nb, char *pre, char *put, int isneg);
@@ -84,5 +84,8 @@ char		*ft_complete(char *bin);
 int 		ft_treat_null(char c);
 int 		ft_isvalid(char *s);
 int			ft_treat_percent(char *s);
+char		**ft_strsplit(char const *s, char c);
+char		*ft_strsub(char const *s, unsigned int start, size_t len);
+int			ft_binary_to_dec(char *pd);
 
 #endif

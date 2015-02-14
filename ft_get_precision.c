@@ -12,14 +12,27 @@
 
 #include "ft_printf.h"
 
-int		ft_get_precision(char *fmt)
+int		ft_get_wprecision(char *fmt)
 {
 	int		nb;
+	int		isprec;
 
-	while (*fmt != '.' || *fmt != '%')
-		*fmt--;
-	if (!ft_isdigit(*fmt + 1) || *fmt == '%')
-		return (ft_strlen(fmt));
-	nb = ft_atoi(fmt);
+	isprec = 0;
+	while (*fmt != '%')
+		fmt--;
+	while ((*fmt != 'c' || *fmt != 'C') && *fmt)
+	{
+		if (*fmt == '.')
+			isprec = 1;
+		fmt++;
+	}
+	if (isprec == 1)
+	{
+		while (*fmt != '.')
+			fmt++;
+		nb = ft_atoi(fmt);
+	}
+	else
+		nb = -1;
 	return (nb);
 }

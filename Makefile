@@ -20,6 +20,7 @@ SRC = ft_add_flags.c		\
 	  ft_get_char.c			\
 	  ft_get_lm.c			\
 	  ft_get_types.c 		\
+	  ft_get_precision.c 	\
 	  ft_hexa_convert.c		\
 	  ft_isdigit.c			\
 	  ft_isvalid.c 			\
@@ -35,6 +36,8 @@ SRC = ft_add_flags.c		\
 	  ft_strchr.c			\
 	  ft_strdup.c			\
 	  ft_strlen.c			\
+	  ft_strsplit.c 		\
+	  ft_strsub.c 			\
 	  ft_strrev.c			\
 	  ft_to_print.c			\
 	  ft_treat_instauint.c	\

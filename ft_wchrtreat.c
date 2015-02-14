@@ -10,15 +10,31 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+
+
+
 #include "ft_printf.h"
 
 int		ft_strwlen(wchar_t *s)
 {
+	int		nb;
 	int		i;
+	int		len;
 
 	i = 0;
 	while (s[i])
+	{
+		len = ft_atoi(ft_base_convert((int)s[i], 'b'));
+		if (len <= 7)
+			nb += 1;
+		else if (len > 7 && len <= 11)
+			nb += 2;
+		else if (len > 11 && len <= 16)
+			nb += 3;
+		else
+			nb += 4;
 		i++;
+	}
 	return (i);
 }
 
@@ -27,24 +43,23 @@ void	ft_adjust(int lm)
 	int		i;
 
 	i = 1;
-	while (i < (lm - 1))
+	while (i < lm)
 	{
 		ft_putchar(' ');
 		i++;
 	}
 }
 
-void	ft_putwchar(int *tab)
+void	ft_putwchar(char **tab)
 {
 	int		i;
-	int		j;
+	int		nbpd;
 
 	i = 0;
-	while (tab[j])
-		j++;
 	while (tab[i])
 	{
-		write(1, &tab[i], j);
+		nbpd = ft_binary_to_dec(tab[i]);
+		write(1, &nbpd, 1);
 		i++;
 	}
 }
@@ -52,20 +67,21 @@ void	ft_putwchar(int *tab)
 int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)
 {
 	char	*bin;
-	int		*bits;
+	char 	**bits;
 	int		pre;
 	int		lm;
 
 	if (st == 0)
 	{
-		pre = ft_get_precision(fmt);
+		pre = ft_get_wprecision(fmt);
 		lm = ft_get_lm(fmt);
 	}
 	else
 		pre = 1;
+
 	if (tab[3] == 1 && tab[4] == 0 && st == 0)
 		ft_adjust(lm);
-	if (pre > 0)
+	if (pre != 0)
 	{
 		bin = ft_base_convert((int)arg, 'b');
 		bits = ft_split_bits(bin);
@@ -83,7 +99,9 @@ int		ft_treat_wstr(char *fmt, int *tab, wchar_t *arg)
 	int		pre;
 	int		j;
 
-	pre = ft_get_precision(fmt);
+	pre = ft_get_wprecision(fmt);
+	if (pre == -1)
+		pre = ft_strwlen(arg);
 	lm = ft_get_lm(fmt);
 	j = 0;
 	if (tab[1] == 1 && tab[2] == 0)

@@ -12,67 +12,79 @@
 
 #include "ft_printf.h"
 
-void	ft_fill_tab(char **res, int nb, char *bits)
+void	ft_replace_x(char **pd, int sandwich)
 {
 	int		i;
 	int		j;
-	int		b;
 
 	j = 0;
-	b = 0;
-	while (j < nb)
+	while (j < sandwich)
 	{
-		res[j] = (char *)malloc(sizeof(char) * (7 + 1));
-		i = 7;
-		while (i >= 0)
+		i = 0;
+		while (i < ft_strlen(pd[j]))
 		{
-			if (bits[b])
-				res[j][i--] = bits[b++];
-			else if (!bits[b] && i >= 0)
-			{
-				res[j][i] = '0';
-				i--;
-			}
+			if (pd[j][i] == 'x')
+				pd[j][i] = '0';
+			i++;
 		}
-		res[j][8] = 0;
 		j++;
 	}
 }
 
-int		ft_define_tab(char *bits)
+void	ft_fill_tab(int sandwich, char *bits, char **pd)
+{
+	int		i;
+	int		j;
+	int		groq;
+
+	i = sandwich;
+	groq = ft_strlen(bits) - 1;
+	while (i >= 0)
+	{
+		j = ft_strlen(pd[i]) - 1;
+		while (j >= 0)
+		{
+			if (pd[i][j] == 'x')
+			{
+				pd[i][j] = bits[groq];
+				groq--;
+			}
+			j--;
+		}
+		i--;
+	}
+}
+
+char	*ft_define_tab(char *bits)
 {
 	size_t	len;
-	int		nb;
+	char	*nb;
 
 	len = ft_strlen(bits);
 	if (len <= 7)
-		nb = 1;
-	else if (len > 7 && len <= 16)
-		nb = 2;
-	else if (len > 16 && len <= 24)
-		nb = 3;
+		nb = "0xxxxxxx";
+	else if (len > 7 && len <= 11)
+		nb = "110xxxxx 10xxxxxx";
+	else if (len > 11 && len <= 16)
+		nb = "1110xxxx 10xxxxxx 10xxxxxx";
 	else
-		nb = 4;
+		nb = "11110xxx 10xxxxxx 10xxxxxx 10xxxxxx";
 	return (nb);
 }
 
-int		*ft_split_bits(char *bits)
+char	**ft_split_bits(char *bits)
 {
-	char	**res;
-	int		*bin;
-	int		nb;
-	int		i;
+	char	**pd;
+	char	*gropd;
+	int		sandwich;
 
-	i = 0;
-	nb = ft_define_tab(bits);
-	res = (char **)malloc(sizeof(char *) * (nb + 1));
-	bin = (int *)malloc(sizeof(int) * nb + 1);
-	ft_fill_tab(res, nb, bits);
-	while (res[i])
-	{
-		bin[i] = ft_atoi(res[i]);
-		i++;
-	}
-	free(res);
-	return (bin);
+	sandwich = 0;
+	gropd = ft_define_tab(bits);
+	pd = ft_strsplit(gropd, ' ');
+	while (pd[sandwich])
+		sandwich++;
+	ft_fill_tab(sandwich - 1, bits, pd);
+	ft_replace_x(pd, sandwich);
+	return (pd);
+
 }

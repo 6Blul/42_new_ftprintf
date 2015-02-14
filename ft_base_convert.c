@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/12 02:37:38 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/03 23:55:36 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/14 13:29:44 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,4 +67,41 @@ char	*ft_base_convert(uintmax_t arg, char c)
 	if (add == 1)
 		bin = ft_complete(bin);
 	return (bin);
+}
+
+int		ft_power(int nb, int power)
+{
+	int		i;
+	int		tp;
+
+	tp = nb;
+	i = 0;
+	if (power == 0)
+		return (1);
+	else if (power < 0)
+		return (0);
+	while (i < power)
+	{
+		nb *= tp;
+		i++;
+	}
+	return (nb);
+}
+
+int		ft_binary_to_dec(char *pd)
+{
+	int		gropd;
+	int		q;
+	int		zhonya;
+
+	gropd = 0;
+	zhonya = 0;
+	q = ft_strlen(pd) - 1;
+	while (q >= 0)
+	{
+		if (pd[q] == '1')
+			gropd += ft_power(2, zhonya);
+		zhonya++;
+	}
+	return (gropd);
 }
