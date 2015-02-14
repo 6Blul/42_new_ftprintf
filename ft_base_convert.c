@@ -102,6 +102,7 @@ int		ft_binary_to_dec(char *pd)
 		if (pd[q] == '1')
 			gropd += ft_power(2, zhonya);
 		zhonya++;
+		q--;
 	}
 	return (gropd);
 }

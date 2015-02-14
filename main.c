@@ -351,6 +351,7 @@ int		main(void)
 	printf("\n");
 	res = ft_printf("{% %}\n");
 
+	printf("Bonjour %C blablabla\n\n", L'é');
 	ft_printf("Bonjour %C blablabla\n\n", L'é');
 
 

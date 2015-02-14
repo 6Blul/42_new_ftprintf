@@ -52,8 +52,8 @@ void	ft_adjust(int lm)
 
 void	ft_putwchar(char **tab)
 {
-	int		i;
 	int		nbpd;
+	int		i;
 
 	i = 0;
 	while (tab[i])
