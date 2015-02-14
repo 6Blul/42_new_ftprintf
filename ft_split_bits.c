@@ -38,11 +38,11 @@ void	ft_fill_tab(int sandwich, char *bits, char **pd)
 	int		groq;
 
 	i = sandwich;
-	groq = ft_strlen(bits) - 1;
+	groq = (ft_strlen(bits) - 1);
 	while (i >= 0)
 	{
-		j = ft_strlen(pd[i]) - 1;
-		while (j >= 0)
+		j = (ft_strlen(pd[i]) - 1);
+		while (j >= 0 && groq >= 0)
 		{
 			if (pd[i][j] == 'x')
 			{
@@ -84,7 +84,7 @@ char	**ft_split_bits(char *bits)
 	while (pd[sandwich])
 		sandwich++;
 	ft_fill_tab(sandwich - 1, bits, pd);
-	ft_replace_x(pd, sandwich);
+	ft_replace_x(pd, sandwich - 1);
 	return (pd);
 
 }
