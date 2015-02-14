@@ -300,7 +300,6 @@ int		main(void)
 	unsigned long 		lb;
 	unsigned long 		lt;
 	char 				*pd;
-	unsigned long 		gropd;
 
 
 	pd = NULL;
@@ -311,13 +310,12 @@ int		main(void)
 	li = -947495550;
 	ulu = 0;
 	lli = -123456785999;
-	llu = ULONG_MAX;
+	llu = ULLONG_MAX;
 	imt = -777776667677;
 	uimt = 9999976767799;
 	st = -670;
 	lt = 943874;
 	lb = 484885;
-	gropd = ULONG_MAX;
 	printf("\n%s flags 'l' 'll' 'h' 'hh' 'z'\n", test);
 	ft_printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
 	printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
@@ -359,16 +357,23 @@ int		main(void)
 	printf("\nres = %i", res);
 	ft_printf("\n");
 
-	res = ft_printf("%c%c%c%c%c", 'A', 'B', 'C', 'D', 'E');
+	/*res = ft_printf("%c%c%c%c%c", 'A', 'B', 'C', 'D', 'E');
 	printf("\nres = %i", res);
 	ft_printf("\n");
 	printf("\nBONJOUR :\n");
+	ft_printf("\n FAUX = \n");
 	ft_printf("%lo", gropd);
-	ft_printf("\n");
+	ft_printf("\n VRAI = \n");
 	printf("%lo", gropd);
+	ft_printf("\nTA RACE\n");
+	ft_printf("FAUX = \n");
+	ft_printf("%lx", gropd2);
+	ft_printf("\n");
+	ft_printf("VRAI = \n");
+	printf("%lx", gropd2);
 	ft_printf("\n");
 	ft_printf("\n");
-	ft_printf("\n");
+	ft_printf("\n");*/
 
 
 	return (0);

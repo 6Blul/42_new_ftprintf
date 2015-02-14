@@ -10,9 +10,6 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
-
-
 #include "ft_printf.h"
 
 int		ft_strwlen(wchar_t *s)
@@ -67,15 +64,10 @@ void	ft_putwchar(char **tab)
 int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)
 {
 	char	*bin;
-	char 	**bits;
+	char	**bits;
 	int		pre;
 	int		lm;
 
-	if ((int)arg <= 127)
-	{
-		ft_putchar((char)arg);
-		return (1);
-	}
 	if (st == 0)
 	{
 		pre = ft_get_wprecision(fmt);

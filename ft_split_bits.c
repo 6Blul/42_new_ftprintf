@@ -86,5 +86,4 @@ char	**ft_split_bits(char *bits)
 	ft_fill_tab(sandwich - 1, bits, pd);
 	ft_replace_x(pd, sandwich - 1);
 	return (pd);
-
 }

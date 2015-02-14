@@ -47,8 +47,7 @@ char	ft_hexa_maxinb(int n)
 	return ((char)n);
 }
 
-
-char 	ft_which_nb(char n, char c)
+char	ft_which_nb(char n, char c)
 {
 	if (c == 'x')
 		return (ft_hexa_mininb(n));
