@@ -219,7 +219,7 @@ int		main(void)
 	printf("Test de plusieurs flags sur le meme argument : [%-18.4lu], [%-8lu], [%15.7lu]\n\n\n", lu, lu, lu); 
 
 	printf("\n%s flag 'X' (comparaison avec lx)\n", test);
-	ft_printf("Original = [%X]\n", xx);
+	ft_printf("%X\n", 42);
 	printf("Original = [%lx]\n\n", lx);
 	ft_printf("Test du flag '0' : [%0X], [%015X], [%04X]\n", xx, xx, xx);
 	printf("Test du flag '0' : [%0lx], [%015lx], [%04lx]\n\n", lx, lx, lx);
@@ -351,8 +351,7 @@ int		main(void)
 	printf("\n");
 	res = ft_printf("{% %}\n");
 
-	printf("Bonjour %C blablabla\n\n", L'é');
-	ft_printf("Bonjour %C blablabla\n\n", L'é');
+	ft_printf("Bonjour %C blablabla\n\n", 945);
 
 
 	return (0);

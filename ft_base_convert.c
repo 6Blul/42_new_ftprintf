@@ -56,7 +56,7 @@ char	*ft_base_convert(uintmax_t arg, char c)
 	while (arg > 0)
 	{
 		tp += (arg % nb);
-		if (arg % nb == 0)
+		if (arg % nb == 0 && c != 'b')
 			add = 1;
 		arg /= nb;
 		if (arg > 0)
@@ -71,21 +71,19 @@ char	*ft_base_convert(uintmax_t arg, char c)
 
 int		ft_power(int nb, int power)
 {
-	int		i;
 	int		tp;
 
 	tp = nb;
-	i = 0;
 	if (power == 0)
 		return (1);
 	else if (power < 0)
 		return (0);
-	while (i < power)
+	while (power != 1)
 	{
-		nb *= tp;
-		i++;
+		tp *= nb;
+		power--;
 	}
-	return (nb);
+	return (tp);
 }
 
 int		ft_binary_to_dec(char *pd)
@@ -96,7 +94,7 @@ int		ft_binary_to_dec(char *pd)
 
 	gropd = 0;
 	zhonya = 0;
-	q = ft_strlen(pd) - 1;
+	q = (ft_strlen(pd) - 1);
 	while (q >= 0)
 	{
 		if (pd[q] == '1')

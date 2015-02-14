@@ -41,7 +41,7 @@ void	ft_fill_tab(int sandwich, char *bits, char **pd)
 	groq = (ft_strlen(bits) - 1);
 	while (i >= 0)
 	{
-		j = (ft_strlen(pd[i]) - 1);
+		j = (ft_strlen(pd[i]));
 		while (j >= 0 && groq >= 0)
 		{
 			if (pd[i][j] == 'x')

@@ -56,7 +56,7 @@ void	ft_putwchar(char **tab)
 	int		i;
 
 	i = 0;
-	while (tab[i])
+	while (tab[i] != NULL)
 	{
 		nbpd = ft_binary_to_dec(tab[i]);
 		write(1, &nbpd, 1);
@@ -85,7 +85,6 @@ int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)
 		bin = ft_base_convert((int)arg, 'b');
 		bits = ft_split_bits(bin);
 		ft_putwchar(bits);
-
 		if (tab[3] == 1 && tab[4] == 1 && st == 0)
 			ft_adjust(lm);
 		return (lm + 1);

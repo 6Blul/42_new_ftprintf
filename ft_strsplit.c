@@ -73,7 +73,7 @@ char			**ft_strsplit(char const *s, char c)
 		if (!res)
 			return (NULL);
 		ft_put_in(res, (char *)s, c);
-		res[len] = 0;
+		res[len] = NULL;
 		len = 0;
 		return (res);
 	}
