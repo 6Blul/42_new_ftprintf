@@ -18,7 +18,7 @@ char	*ft_convers_void(char *fmt, int *tab, void *arg)
 	char		*put;
 
 	addr = (uintmax_t)arg;
-	put = ft_hexa(addr);
+	put = ft_hexa(addr, 'x');
 	put = ft_sharpx(put);
 	if (tab[1] == 1)
 	{

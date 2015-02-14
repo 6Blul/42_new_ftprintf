@@ -71,6 +71,11 @@ int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)
 	int		pre;
 	int		lm;
 
+	if ((int)arg <= 127)
+	{
+		ft_putchar((char)arg);
+		return (1);
+	}
 	if (st == 0)
 	{
 		pre = ft_get_wprecision(fmt);

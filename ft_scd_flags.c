@@ -15,7 +15,7 @@
 char		*ft_h_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
-		return (ft_hexa((unsigned short)arg));
+		return (ft_hexa((unsigned short)arg, c));
 	else if (c == 'b' || c == 't' || c == 'o' || c == 'O')
 		return (ft_base_convert((unsigned short)arg, c));
 	else
@@ -25,7 +25,7 @@ char		*ft_h_ui(uintmax_t arg, char c)
 char		*ft_hh_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
-		return (ft_hexa((unsigned char)arg));
+		return (ft_hexa((unsigned char)arg, c));
 	else if (c == 'b' || c == 't' || c == 'o' || c == 'O')
 		return (ft_base_convert((unsigned char)arg, c));
 	else
@@ -35,7 +35,7 @@ char		*ft_hh_ui(uintmax_t arg, char c)
 char		*ft_l_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
-		return (ft_hexa((unsigned long)arg));
+		return (ft_hexa((unsigned long)arg, c));
 	else if (c == 'b' || c == 't' || c == 'o' || c == 'O')
 		return (ft_base_convert((unsigned long)arg, c));
 	else
@@ -45,7 +45,7 @@ char		*ft_l_ui(uintmax_t arg, char c)
 char		*ft_ll_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
-		return (ft_hexa((unsigned long long)arg));
+		return (ft_hexa((unsigned long long)arg, c));
 	else if (c == 'b' || c == 't' || c == 'o' || c == 'O')
 		return (ft_base_convert((unsigned long long)arg, c));
 	else
@@ -55,7 +55,7 @@ char		*ft_ll_ui(uintmax_t arg, char c)
 char		*ft_z_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
-		return (ft_hexa((size_t)arg));
+		return (ft_hexa((size_t)arg, c));
 	else if (c == 'b' || c == 't' || c == 'o' || c == 'O')
 		return (ft_base_convert((size_t)arg, c));
 	else

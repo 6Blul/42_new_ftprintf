@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 #include <stdlib.h>
 
-char	ft_hexa_nb(int n)
+char	ft_hexa_mininb(int n)
 {
 	if (n == 10)
 		return ('a');
@@ -30,7 +30,32 @@ char	ft_hexa_nb(int n)
 	return ((char)n);
 }
 
-char	*ft_hexa(uintmax_t arg)
+char	ft_hexa_maxinb(int n)
+{
+	if (n == 10)
+		return ('A');
+	else if (n == 11)
+		return ('B');
+	else if (n == 12)
+		return ('C');
+	else if (n == 13)
+		return ('D');
+	else if (n == 14)
+		return ('E');
+	else if (n == 15)
+		return ('F');
+	return ((char)n);
+}
+
+
+char 	ft_which_nb(char n, char c)
+{
+	if (c == 'x')
+		return (ft_hexa_mininb(n));
+	return (ft_hexa_maxinb(n));
+}
+
+char	*ft_hexa(uintmax_t arg, char c)
 {
 	char	*tp;
 	char	*new;
@@ -46,7 +71,7 @@ char	*ft_hexa(uintmax_t arg)
 	{
 		nb = (arg % 16);
 		if (nb >= 10)
-			new[i] = ft_hexa_nb(nb);
+			new[i] = ft_which_nb(nb, c);
 		else
 			new[i] = nb + '0';
 		arg /= 16;

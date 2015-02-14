@@ -12,12 +12,8 @@
 
 #include "ft_printf.h"
 
-char	*ft_get_char(char arg)
+int		ft_get_char(char arg)
 {
-	char	*res;
-
-	res = (char *)malloc(sizeof(char) * 1 + 1);
-	res[0] = arg;
-	res[1] = 0;
-	return (res);
+	ft_putchar(arg);
+	return (1);
 }

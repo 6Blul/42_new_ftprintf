@@ -26,9 +26,9 @@ char	*ft_get_utypes(uintmax_t arg, char c)
 	else if (c == 'O')
 		return (ft_base_convert((long unsigned)arg, c));
 	else if (c == 'x')
-		return (ft_hexa(arg));
+		return (ft_hexa(arg, c));
 	else if (c == 'X')
-		return (ft_hexa((long unsigned)arg));
+		return (ft_hexa((long unsigned)arg, c));
 	else if (c == 'U')
 		return (ft_uinmaxtoa((long unsigned)arg));
 	return (ft_uinmaxtoa(arg));

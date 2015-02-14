@@ -32,7 +32,7 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 	if (is_wchar(fmt))
 		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
 	if (*fmt == 'c')
-		put = ft_get_char((arg));
+		return (ft_get_char(arg));
 	else
 		put = ft_get_itypes(arg, *fmt);
 	if (*(fmt - 1) != '%')

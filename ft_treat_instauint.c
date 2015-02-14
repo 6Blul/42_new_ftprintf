@@ -39,7 +39,7 @@ char	*ft_insta_uint(uintmax_t arg, char *fmt)
 	else if (*fmt == 't')
 		put = ft_base_convert(arg, 't');
 	else if (*fmt == 'x' || *fmt == 'X')
-		put = ft_hexa(arg);
+		put = ft_hexa(arg, *fmt);
 	else
 		put = ft_maxtoa(arg);
 	return (put);

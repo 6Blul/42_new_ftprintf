@@ -233,8 +233,8 @@ int		main(void)
 	printf("%s%i\n\n", retour1, res1 - 2);
 
 	printf("\n%s flag 'O' (comparaison avec lo)\n", test);
-	ft_printf("Original = [%O]\n", oo);
-	printf("Original = [%lo]\n\n", lo);
+	res = ft_printf("Original = [%O]\n", oo);
+	res1 = printf("Original = [%lo]\n\n", lo);
 	ft_printf("Test du flag '0' : [%0O], [%015O], [%04O]\n", oo, oo, oo);
 	printf("Test du flag '0' : [%0lo], [%015lo], [%04lo]\n\n", lo, lo, lo);
 	ft_printf("Test du flag '-' et de la long. minimale du champ : [%18O], [%3O], [%-22O], [%3O]\n", oo, oo, oo, oo);
@@ -300,6 +300,7 @@ int		main(void)
 	unsigned long 		lb;
 	unsigned long 		lt;
 	char 				*pd;
+	unsigned long 		gropd;
 
 
 	pd = NULL;
@@ -308,19 +309,20 @@ int		main(void)
 	hi = -15;
 	hu = 25;
 	li = -947495550;
-	ulu = 9474955550;
+	ulu = 0;
 	lli = -123456785999;
-	llu = 12345678559;
+	llu = ULONG_MAX;
 	imt = -777776667677;
 	uimt = 9999976767799;
 	st = -670;
 	lt = 943874;
 	lb = 484885;
+	gropd = ULONG_MAX;
 	printf("\n%s flags 'l' 'll' 'h' 'hh' 'z'\n", test);
 	ft_printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
 	printf("Test des flags h/hh : [%hi] [%hu] [%hhi] [%hhu]\n", hi, hu, hhi, hhu);
-	ft_printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
-	printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
+	res = ft_printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
+	res1 = printf("Test des flags l/ll : [%li] [%lu] [%lli] [%llu]\n", li, ulu, lli, llu);
 	ft_printf("Test des flags j/z : [%ji] [%ju] [%zi] [%zu]\n", imt, uimt, st, st);
 	printf("Test des flags j/z : [%ji] [%ju] [%zi] [%zu]\n\n", imt, uimt, st, st);
 	
@@ -353,7 +355,19 @@ int		main(void)
 
 	ft_printf("Bonjour %CAu revoir", 945);
 	ft_printf("\n");
-	ft_printf("%C", 945);
+	res = ft_printf("%C", 945);
+	printf("\nres = %i", res);
+	ft_printf("\n");
+
+	res = ft_printf("%c%c%c%c%c", 'A', 'B', 'C', 'D', 'E');
+	printf("\nres = %i", res);
+	ft_printf("\n");
+	printf("\nBONJOUR :\n");
+	ft_printf("%lo", gropd);
+	ft_printf("\n");
+	printf("%lo", gropd);
+	ft_printf("\n");
+	ft_printf("\n");
 	ft_printf("\n");
 
 
