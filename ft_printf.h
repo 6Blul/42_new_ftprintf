@@ -19,6 +19,7 @@
 # include <stdarg.h>
 # include <stdio.h>
 # include <inttypes.h>
+# include <limits.h>
 
 int			ft_printf(const char *format, ...);
 char		*ft_full_fmt(char *s);
@@ -87,5 +88,6 @@ int			ft_treat_percent(char *s);
 char		**ft_strsplit(char const *s, char c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 int			ft_binary_to_dec(char *pd);
+char		*ft_arg_is_zero(void);
 
 #endif

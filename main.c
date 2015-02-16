@@ -47,9 +47,9 @@ int		main(void)
 	retour = "Test du retour de ft_printf : ";
 	retour1 = "Test du retour de printf : ";
 	test = "Test de :";
-	u = 3554;
-	x = 834444444;
-	o = 42;
+	u = 0;
+	x = 0;
+	o = 0;
 	lu = 10212;
 	lx = 3609098989808;
 	lo = 27098989896;
@@ -68,9 +68,12 @@ int		main(void)
 
 
 	printf("\n%s flag 'u'\n", test);
-	ft_printf("%u", u);
-	ft_printf("\n");
-	printf("%u", u);
+	res = ft_printf("%u", u);
+	printf("\n");
+	res1 = printf("%u", u);
+	printf("\n");
+	printf("%s%i\n", retour, res);
+	printf("%s%i\n\n", retour1, res1 - 1);	
 	printf("\n");
 	ft_printf("Test du flag '0' : [%0u], [%015u], [%04u]\n", u, u, u);
 	printf("Test du flag '0' : [%0u], [%015u], [%04u]\n\n", u, u, u);
@@ -85,8 +88,12 @@ int		main(void)
 
 
 	printf("\n%s flag 'x'\n", test);
-	ft_printf("Original = [%x]\n", x);
-	printf("Original = [%x]\n\n", x);
+	res = ft_printf("%#x", x);
+	printf("\n");
+	res1 = printf("%#x", x);
+	printf("\n");
+	printf("%s%i\n", retour, res);
+	printf("%s%i\n\n", retour1, res1 - 1);	
 	ft_printf("Test du flag '#' : [%#x]\n", x);
 	printf("Test du flag '#' : [%#x]\n\n", x);
 	ft_printf("Test du flag '0' : [%0x], [%015x], [%04x]\n", x, x, x);
@@ -101,8 +108,12 @@ int		main(void)
 
 
 	printf("\n%s flag 'o'\n", test);
-	ft_printf("Original = [%o]\n", o);
-	printf("Original = [%o]\n\n", o);
+	res = ft_printf("%o", o);
+	printf("\n");
+	res1 = printf("%o", o);
+	printf("\n");
+	printf("%s%i\n", retour, res);
+	printf("%s%i\n\n", retour1, res1 - 1);
 	ft_printf("Test du flag '#' : [%#o]\n", o);
 	printf("Test du flag '#' : [%#o]\n\n", o);
 	ft_printf("Test du flag '0' : [%0o], [%015o], [%04o]\n", o, o, o);
@@ -367,11 +378,21 @@ int		main(void)
 't', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}');
 
 
+	printf("\n");
+	printf("\n");
 
 	printf("\n");
-	res = ft_printf("a%ob%oc%od", 0, 55555, 100000);
+	res = ft_printf("a%ob%oc%od", 0, 555, 100000);
 	ft_printf("\n");
-	res1 = printf("a%ob%oc%od", 0, 55555, 100000);
+	res1 = printf("a%ob%oc%od", 0, 555, 100000);
+	printf("\n");
+	printf("\n");
+	printf("%s%i\n", retour, res);
+	printf("%s%i\n", retour1, res1);
+	res = ft_printf("%o", 555);
+	ft_printf("\n");
+	res1 = printf("%o", 555);
+	printf("\n");
 	printf("\n");
 	printf("%s%i\n", retour, res);
 	printf("%s%i\n", retour1, res1);
@@ -380,6 +401,14 @@ int		main(void)
 	ft_printf("\n");
 	printf("%c%c", 'A', 'B');
 
+	/*printf("\n");
+	printf("\n");
+	res = ft_printf("%.c", 0);
+	printf("\n");
+	res1 = printf("%.c", 0);
+	printf("\n");
+	printf("%s%i\n", retour, res);
+	printf("%s%i\n", retour1, res1);*/
 
 	/*res = ft_printf("%c%c%c%c%c", 'A', 'B', 'C', 'D', 'E');
 	printf("\nres = %i", res);

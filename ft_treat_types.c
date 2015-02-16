@@ -74,7 +74,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 		while (is_let_flag(*fmt) || is_sign_flag(*fmt))
 			fmt--;
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, copy, 0, 0);
+			put = ft_treat_prec(put, copy, 0, 0);		
 		if (put)
 			put = ft_ui_sflags(put, tab, copy);
 		else
