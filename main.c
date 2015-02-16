@@ -353,9 +353,33 @@ int		main(void)
 
 	ft_printf("Bonjour %CAu revoir", 945);
 	ft_printf("\n");
-	res = ft_printf("%C", 945);
-	printf("\nres = %i", res);
+	/*res = ft_printf("%C", 945);
+	printf("\nres = %i", res);*/
 	ft_printf("\n");
+
+	ft_printf("%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c%c",
+' ', '!', '"', '#', '$', '%', '&', '\'', '(', ')', '*', '+', ',', '-',
+'.', '/', '0', '1', '2', '3', '4', '5', '6', '7', '8', '9', ':', ';',
+'<', '=', '>', '?', '@', 'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I',
+'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W',
+'X', 'Y', 'Z', '[', '\\', ']', '^', '_', '`', 'a', 'b', 'c', 'd', 'e',
+'f', 'g', 'h', 'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
+'t', 'u', 'v', 'w', 'x', 'y', 'z', '{', '|', '}');
+
+
+
+	printf("\n");
+	res = ft_printf("a%ob%oc%od", 0, 55555, 100000);
+	ft_printf("\n");
+	res1 = printf("a%ob%oc%od", 0, 55555, 100000);
+	printf("\n");
+	printf("%s%i\n", retour, res);
+	printf("%s%i\n", retour1, res1);
+	ft_printf("\n");
+	ft_printf("%c%c", 'A', 'B');
+	ft_printf("\n");
+	printf("%c%c", 'A', 'B');
+
 
 	/*res = ft_printf("%c%c%c%c%c", 'A', 'B', 'C', 'D', 'E');
 	printf("\nres = %i", res);

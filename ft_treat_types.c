@@ -12,9 +12,16 @@
 
 #include "ft_printf.h"
 
-int		is_wchar(char *c)
+int		is_wchar(char *c, int arg)
 {
-	return (*c == 'C' || (*c == 'c' && *(c - 1) == 'l'));
+	if (*c == 'C' || (*c == 'c' && *(c - 1) == 'l'))
+	{
+		if (arg <= 127)
+			return (0);
+		else
+			return (1);
+	}
+	return (0);
 }
 
 int		is_wstr(char *c)
@@ -29,10 +36,10 @@ int		ft_treat_int(char *fmt, intmax_t arg, char *copy)
 
 	tab = (int *)malloc(sizeof(int) * 7);
 	tab = fill_iflags(tab, copy, (int)arg);
-	if (is_wchar(fmt))
+	if (is_wchar(fmt, (int)arg))
 		return (ft_treat_wchar(fmt, (wchar_t)arg, tab, 0));
-	if (*fmt == 'c')
-		return (ft_get_char(arg));
+	else if (*fmt == 'c' || *fmt == 'C')
+		put = (ft_get_char(arg));
 	else
 		put = ft_get_itypes(arg, *fmt);
 	if (*(fmt - 1) != '%')
