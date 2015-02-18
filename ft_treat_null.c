@@ -20,6 +20,6 @@ int		ft_treat_null(char c)
 		return (6);
 	}
 	else
-		ft_putstr("0x");
-	return (2);
+		ft_putstr("0x0");
+	return (3);
 }

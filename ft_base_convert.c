@@ -56,9 +56,9 @@ char	*ft_base_convert(uintmax_t arg, char c)
 	while (arg > 0)
 	{
 		tp += (arg % nb);
+		arg /= nb;
 		if (arg % nb == 0 && c != 'P')
 			add = 1;
-		arg /= nb;
 		if (arg > 0)
 			tp *= 10;
 	}
