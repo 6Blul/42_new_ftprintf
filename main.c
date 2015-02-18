@@ -60,7 +60,7 @@ int		main(void)
 	dd = 90102030;
 	uu = 10212;
 	xx = 3609098989808;
-	oo = 27098989896;
+	oo = 276;
 	ld = 90102030;
 	s = "Un enoooorme chat bleu";
 	p = "je oui je oui je oui";
@@ -389,9 +389,13 @@ int		main(void)
 	printf("\n");
 	printf("%s%i\n", retour, res);
 	printf("%s%i\n", retour1, res1);
-	res = ft_printf("%o", 555);
-	ft_printf("\n");
-	res1 = printf("%o", 555);
+	res = ft_printf("%.o , %.0o", 0, 0);
+	printf("\n");
+	res1 = printf("%.o , %.0o", 0, 0);
+	printf("\n");
+	res = ft_printf("%.x , %.0x", 0, 0);
+	printf("\n");
+	res1 = printf("%.x , %.0x", 0, 0);
 	printf("\n");
 	printf("\n");
 	printf("%s%i\n", retour, res);
@@ -400,6 +404,16 @@ int		main(void)
 	ft_printf("%c%c", 'A', 'B');
 	ft_printf("\n");
 	printf("%c%c", 'A', 'B');
+	printf("\n");
+
+	printf("%#X", 42);
+	printf("\n");
+	ft_printf("%#X", 42);
+	printf("\n");
+	printf("%#x", 42);
+	printf("\n");
+	ft_printf("%#x", 42);
+	printf("\n");
 
 	/*printf("\n");
 	printf("\n");

@@ -19,7 +19,7 @@ char	*ft_convers_void(char *fmt, int *tab, void *arg)
 
 	addr = (uintmax_t)arg;
 	put = ft_hexa(addr, 'x');
-	put = ft_sharpx(put);
+	put = ft_sharpx(put, 'x');
 	if (tab[1] == 1)
 	{
 		if (tab[2] == 1)

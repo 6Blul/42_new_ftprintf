@@ -64,9 +64,7 @@ char	*which_return(char *put, int nb, char *fmt)
 {
 	while (is_convers_flag(*fmt) == 0)
 		fmt++;
-	if (nb == 0 && *fmt == 'o' && put[0] == '0')
-		return(ft_arg_is_zero());
-	else if (put[0] == '0' && nb == 0)
+	if (put[0] == '0' && nb == 0)
 		ft_bzero(put, 2);
 	return (put);
 }

@@ -44,7 +44,7 @@ char	*ft_ui_sflags(char *put, int *tab, char *fmt)
 	if (tab[3] == 1 && (*temp == 'o' || *temp == 'O'))
 		put = ft_sharpo(put);
 	if (tab[3] == 1 && (*temp == 'x' || *temp == 'X'))
-		put = ft_sharpx(put);
+		put = ft_sharpx(put, *temp);
 	if (tab[4] == 1)
 	{
 		if (tab[5] == 1)

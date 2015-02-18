@@ -28,7 +28,7 @@ char	*ft_add_bef(char *put, char c)
 	return (new);
 }
 
-char	*ft_sharpx(char *put)
+char	*ft_sharpx(char *put, char c)
 {
 	char	*ret;
 	int		j;
@@ -44,7 +44,7 @@ char	*ft_sharpx(char *put)
 		j++;
 	}
 	ret[j] = '0';
-	ret[j + 1] = 'x';
+	ret[j + 1] = c;
 	j += 2;
 	while (put[i])
 		ret[j++] = put[i++];

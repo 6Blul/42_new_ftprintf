@@ -67,7 +67,7 @@ char		*ft_v_sflags(char *put, int *tab, char *fmt);
 char		*to_print(int width, char *conv, char c);
 char		*ft_align(char *put, char *fmt, char c, char type);
 char		*ft_sharpo(char *put);
-char		*ft_sharpx(char *put);
+char		*ft_sharpx(char *put, char c);
 char		*ft_add_bef(char *put, char c);
 void		ft_putwchar(char **tab);
 int			ft_get_wprecision(char *fmt);
