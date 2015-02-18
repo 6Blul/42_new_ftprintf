@@ -53,12 +53,12 @@ char	*ft_base_convert(uintmax_t arg, char c)
 	add = 0;
 	tp = 0;
 	nb = define_conv(c);
+	if (arg % nb == 0)
+		add = 1;
 	while (arg > 0)
 	{
 		tp += (arg % nb);
 		arg /= nb;
-		if (arg % nb == 0 && c != 'P')
-			add = 1;
 		if (arg > 0)
 			tp *= 10;
 	}
