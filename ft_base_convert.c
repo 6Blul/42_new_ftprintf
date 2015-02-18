@@ -50,6 +50,8 @@ char	*ft_base_convert(uintmax_t arg, char c)
 	int			nb;
 	int			add;
 
+	if (arg == 0)
+		return (ft_arg_is_zero());
 	add = 0;
 	tp = 0;
 	nb = define_conv(c);

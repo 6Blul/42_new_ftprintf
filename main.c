@@ -389,13 +389,13 @@ int		main(void)
 	printf("\n");
 	printf("%s%i\n", retour, res);
 	printf("%s%i\n", retour1, res1);
+	/*res = ft_printf("%lo", 1);
+	printf("\n");
+	res1 = printf("%lo", 1);
+	printf("\n");*/
 	res = ft_printf("%.o , %.0o", 0, 0);
 	printf("\n");
 	res1 = printf("%.o , %.0o", 0, 0);
-	printf("\n");
-	res = ft_printf("%.x , %.0x", 0, 0);
-	printf("\n");
-	res1 = printf("%.x , %.0x", 0, 0);
 	printf("\n");
 	printf("\n");
 	printf("%s%i\n", retour, res);
@@ -406,15 +406,25 @@ int		main(void)
 	printf("%c%c", 'A', 'B');
 	printf("\n");
 
-	printf("%#X", 42);
+	printf("{%+03d}", 0);
 	printf("\n");
-	ft_printf("%#X", 42);
+	ft_printf("{%+03d}", 0);
 	printf("\n");
 	printf("%#x", 42);
 	printf("\n");
 	ft_printf("%#x", 42);
 	printf("\n");
+	printf("\n");
+	printf("\n");
+	printf("\n");
 
+	ft_printf("%lo\n\n%lo", 0);
+	printf("\n");
+	ft_printf("{%010d}", -42);
+	printf("\n");
+	printf("{%010d}", -42);
+	printf("\n");
+	printf("\n");
 	/*printf("\n");
 	printf("\n");
 	res = ft_printf("%.c", 0);

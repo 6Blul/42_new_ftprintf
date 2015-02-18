@@ -21,9 +21,20 @@ char	*ft_add_bef(char *put, char c)
 	i = 0;
 	j = 1;
 	new = (char *)malloc(sizeof(char) * (ft_strlen(put) + 1) + 1);
-	new[0] = c;
+	if ((put[0] == '0' && c == '+') || (put[0] == '+' && c == '0'))
+	{
+		new[0] = '+';
+		new[j] = '0';
+		j++;
+	}
+	else
+		new[0] = c;
 	while (put[i])
-		new[j++] = put[i++];
+	{
+		new[j] = put[i];
+		i++;
+		j++;
+	}
 	new[j] = 0;
 	return (new);
 }

@@ -39,6 +39,13 @@ char	*put_zeros(char *s, int spaces, char *ret, int len)
 	i = 0;
 	j = 0;
 	nb = spaces - len;
+	if (s[j] == '-')
+	{
+		ret[i] = '-';
+		i++;
+		j++;
+		nb++;
+	}
 	while (i < nb)
 		ret[i++] = '0';
 	while (s[j])

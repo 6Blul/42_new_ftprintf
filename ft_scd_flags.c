@@ -35,21 +35,21 @@ char		*ft_hh_ui(uintmax_t arg, char c)
 char		*ft_l_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
-		return (ft_hexa((unsigned long)arg, c));
+		return (ft_hexa((unsigned long int)arg, c));
 	else if (c == 'b' || c == 't' || c == 'o' || c == 'O')
-		return (ft_base_convert((unsigned long)arg, c));
+		return (ft_base_convert((unsigned long int)arg, c));
 	else
-		return (ft_uinmaxtoa((unsigned long)arg));
+		return (ft_uinmaxtoa((unsigned long int)arg));
 }
 
 char		*ft_ll_ui(uintmax_t arg, char c)
 {
 	if (c == 'x' || c == 'X')
-		return (ft_hexa((unsigned long long)arg, c));
+		return (ft_hexa((unsigned long long int)arg, c));
 	else if (c == 'b' || c == 't' || c == 'o' || c == 'O')
-		return (ft_base_convert((unsigned long long)arg, c));
+		return (ft_base_convert((unsigned long long int)arg, c));
 	else
-		return (ft_uinmaxtoa((unsigned long long)arg));
+		return (ft_uinmaxtoa((unsigned long long int)arg));
 }
 
 char		*ft_z_ui(uintmax_t arg, char c)
