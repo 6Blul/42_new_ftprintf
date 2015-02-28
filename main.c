@@ -6,7 +6,7 @@
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2015/01/31 03:12:37 by spochez           #+#    #+#             */
-/*   Updated: 2015/02/12 14:25:23 by spochez          ###   ########.fr       */
+/*   Updated: 2015/02/28 05:50:02 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -444,13 +444,12 @@ int		main(void)
 	printf("%lo", gropd);
 	ft_printf("\nTA RACE\n");
 	ft_printf("FAUX = \n");
-	ft_printf("%lx", gropd2);
+	ft_printf("%lx", gropd2);*/
 	ft_printf("\n");
-	ft_printf("VRAI = \n");
-	printf("%lx", gropd2);
+	ft_printf("%.3p", 0);
 	ft_printf("\n");
 	ft_printf("\n");
-	ft_printf("\n");*/
+	ft_printf("\n");
 
 
 	return (0);

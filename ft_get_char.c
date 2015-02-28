@@ -14,7 +14,7 @@
 
 char		*ft_get_char(char arg)
 {
-	char 	*put;
+	char	*put;
 
 	put = (char *)malloc(sizeof(char) * 2);
 	if (arg == 0)

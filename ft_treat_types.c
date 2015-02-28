@@ -74,7 +74,7 @@ int		ft_treat_uint(char *fmt, uintmax_t arg, char *copy)
 		while (is_let_flag(*fmt) || is_sign_flag(*fmt))
 			fmt--;
 		if (tab[0] == 1)
-			put = ft_treat_prec(put, copy, 0, 0);		
+			put = ft_treat_prec(put, copy, 0, 0);
 		if (put)
 			put = ft_ui_sflags(put, tab, copy);
 		else
@@ -89,10 +89,10 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 	int		*tab;
 	char	*put;
 
-	if (arg == NULL)
-		return (ft_treat_null(*fmt));
 	tab = (int *)malloc(sizeof(int) * 3);
 	tab = fill_vflags(tab, copy);
+	if (arg == NULL)
+		return (ft_treat_null(fmt, tab));
 	if (is_wstr(fmt))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')
