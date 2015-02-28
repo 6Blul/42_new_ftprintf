@@ -42,7 +42,7 @@ void		ft_adapt_char(int *tab);
 int			is_convers_flag(char c);
 int			is_sign_flag(char c);
 int			is_let_flag(char c);
-char		*ft_get_char(char arg);
+int			ft_get_char(char arg, char *fmt, int *tab);
 char		*ft_strrev(char *s);
 int			ft_treat_int(char *fmt, intmax_t arg, char *copy);
 int			ft_treat_uint(char *fmt, uintmax_t arg, char *copy);
