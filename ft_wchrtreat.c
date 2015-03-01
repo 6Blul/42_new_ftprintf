@@ -71,7 +71,9 @@ int		ft_treat_wstr(char *fmt, int *tab, wchar_t *arg)
 	int		lm;
 	int		pre;
 	int		j;
+	int		ret;
 
+	ret = 0;
 	pre = ft_get_wprecision(fmt);
 	if (pre == -1)
 		pre = ft_strwlen(arg);
@@ -80,8 +82,8 @@ int		ft_treat_wstr(char *fmt, int *tab, wchar_t *arg)
 	if (tab[1] == 1 && tab[2] == 0)
 		ft_adjust(lm - ft_strwlen(arg));
 	while (j <= pre)
-		ft_treat_wchar(fmt, arg[j++], tab, 1);
+		ret = ft_treat_wchar(fmt, arg[j++], tab, 1);
 	if (tab[1] == 1 && tab[2] == 1)
 		ft_adjust(lm - ft_strwlen(arg));
-	return (lm);
+	return (ret + lm);
 }

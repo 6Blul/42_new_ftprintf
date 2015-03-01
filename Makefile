@@ -39,6 +39,7 @@ SRC = ft_add_flags.c		\
 	  ft_strsplit.c 		\
 	  ft_strsub.c 			\
 	  ft_strrev.c			\
+	  ft_strwlen.c 			\
 	  ft_to_print.c			\
 	  ft_treat_instauint.c	\
 	  ft_treat_null.c 		\
@@ -58,8 +59,10 @@ all : $(NAME)
 
 $(NAME) :
 	gcc -c $(CFLAGS) $(SRC)
+	gcc -o a.out *.o
 	ar rc $(NAME) $(OBJ)
 	ranlib $(NAME)
+	./a.out
 
 clean :
 	rm -f $(OBJ)
