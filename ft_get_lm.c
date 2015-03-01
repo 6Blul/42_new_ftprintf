@@ -17,9 +17,9 @@ int		ft_get_lm(char *fmt)
 	int		lm;
 
 	while (*fmt != '%')
-		(*fmt)--;
+		fmt--;
 	while (!ft_isdigit(*fmt) && *fmt)
-		(*fmt)++;
+		fmt++;
 	if (*fmt == 0 || *(fmt - 1) == '.')
 		return (0);
 	lm = ft_atoi(fmt);

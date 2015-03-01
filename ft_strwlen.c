@@ -1,35 +1,42 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_get_char.c                                      :+:      :+:    :+:   */
+/*   ft_strwlen.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: spochez <spochez@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2015/01/29 03:01:52 by spochez           #+#    #+#             */
-/*   Updated: 2015/01/29 03:06:59 by spochez          ###   ########.fr       */
+/*   Created: 2015/03/01 02:29:25 by spochez           #+#    #+#             */
+/*   Updated: 2015/03/01 02:29:27 by spochez          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int		ft_get_char(char arg, char *fmt, int *tab)
+int		ft_charsize(int c)
 {
-	char	*put;
+	char 	*b;
 
-	put = (char *)malloc(sizeof(char) * 2);
-	if (arg == 0)
-	{
-		ft_bzero(put, 2);
+	b = ft_base_convert(c, 'b');
+	if (ft_strlen(b) <= 7)
 		return (1);
+	if (ft_strlen(b) <= 11)
+		return (2);
+	if (ft_strlen(b) <= 16)
+		return (3);
+	return (4);
+}
+
+int		ft_strwlen(wchar_t *s)
+{
+	int		i;
+
+	if (s == NULL)
+		return (0);
+	i = 0;
+	while (*s)
+	{
+		i += ft_charsize(*s);
+		s++;
 	}
-	put[0] = arg;
-	put[1] = 0;
-	while (*(fmt - 1) != '%')
-		fmt--;
-	if (tab[4] == 1)
-		put = ft_align(put, fmt, 'l', 'c');
-	else if (tab[3] == 1)
-		put = ft_align(put, fmt, ' ', 'c');
-	ft_putstr(put);
-	return (ft_strlen(put));
+	return (i);
 }

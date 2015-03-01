@@ -12,29 +12,6 @@
 
 #include "ft_printf.h"
 
-int		ft_strwlen(wchar_t *s)
-{
-	int		nb;
-	int		i;
-	int		len;
-
-	i = 0;
-	while (s[i])
-	{
-		len = ft_atoi(ft_base_convert((int)s[i], 'b'));
-		if (len <= 7)
-			nb += 1;
-		else if (len > 7 && len <= 11)
-			nb += 2;
-		else if (len > 11 && len <= 16)
-			nb += 3;
-		else
-			nb += 4;
-		i++;
-	}
-	return (i);
-}
-
 void	ft_adjust(int lm)
 {
 	int		i;
@@ -79,12 +56,12 @@ int		ft_treat_wchar(char *fmt, wchar_t arg, int *tab, int st)
 		ft_adjust(lm);
 	if (pre != 0)
 	{
-		bin = ft_base_convert((int)arg, 'P');
+		bin = ft_base_convert((int)arg, 'b');
 		bits = ft_split_bits(bin);
 		ft_putwchar(bits);
 		if (tab[3] == 1 && tab[4] == 1 && st == 0)
 			ft_adjust(lm);
-		return (lm + 1);
+		return (ft_charsize((int)arg));
 	}
 	return (0);
 }

@@ -89,5 +89,7 @@ char		**ft_strsplit(char const *s, char c);
 char		*ft_strsub(char const *s, unsigned int start, size_t len);
 int			ft_binary_to_dec(char *pd);
 char		*ft_arg_is_zero(void);
+int			ft_strwlen(wchar_t *s);
+int			ft_charsize(int c);
 
 #endif

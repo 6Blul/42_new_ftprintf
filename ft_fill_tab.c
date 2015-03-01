@@ -41,18 +41,6 @@ int		is_lm(char *fmt)
 	return (0);
 }
 
-void	ft_adapt_char(int *tab)
-{
-	if (tab[0] == 1)
-		tab[0] = 0;
-	if (tab[1] == 1)
-		tab[1] = 0;
-	if (tab[2] == 1)
-		tab[2] = 0;
-	if (tab[5] == 1)
-		tab[5] = 0;
-}
-
 int		*fill_iflags(int *tab, char *fmt, int arg)
 {
 	ft_bzero(tab, 6);
@@ -76,8 +64,6 @@ int		*fill_iflags(int *tab, char *fmt, int arg)
 	if (arg < 0)
 		tab[6] = 1;
 	tab[3] = is_lm(fmt);
-	if (*(fmt - 1) == 'c')
-		ft_adapt_char(tab);
 	return (tab);
 }
 

@@ -37,7 +37,7 @@ char	*ft_cut_fmt(char *s)
 
 	j = 0;
 	s = ft_go_to(s);
-	s += 1;
+	s++;
 	res = (char *)malloc(sizeof(char) * ft_strlen(s) + 1);
 	while (*s)
 		res[j++] = *(s++);
