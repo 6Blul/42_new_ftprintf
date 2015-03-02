@@ -12,10 +12,9 @@
 
 #include "ft_printf.h"
 
-
 int		ft_charsize(int c)
 {
-	char 	*b;
+	char	*b;
 
 	b = ft_base_convert(c, 'b');
 	if (ft_strlen(b) <= 7)

@@ -88,12 +88,12 @@ int		ft_treat_void(char *fmt, void *arg, char *copy)
 {
 	int		*tab;
 	char	*put;
-	
+
 	tab = (int *)malloc(sizeof(int) * 4);
 	tab = fill_vflags(tab, copy);
 	if (arg == NULL)
 		return (ft_treat_null(fmt, tab));
-	if (is_wstr(fmt) && !is_str((wchar_t *) arg))
+	if (is_wstr(fmt) && !is_str((wchar_t *)arg))
 		return (ft_treat_wstr(fmt, tab, (wchar_t *)arg));
 	else if (*fmt == 'p')
 		put = ft_convers_void(copy, tab, (void *)arg);

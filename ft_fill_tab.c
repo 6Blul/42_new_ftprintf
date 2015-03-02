@@ -97,7 +97,8 @@ int		*fill_vflags(int *tab, char *fmt)
 		if (*fmt == '-')
 			tab[2] = 1;
 		if (*fmt == '0' && !ft_isdigit(*(fmt - 1)) && tab[0] == 0)
-			tab[3] = 1;}
+			tab[3] = 1;
+	}
 	tab[1] = is_lm(fmt);
 	return (tab);
 }

@@ -42,7 +42,7 @@ char	*ft_strchoice(void *arg, char c)
 	{
 		tp = (wchar_t *)arg;
 		i = 0;
-		res = (char *)malloc(sizeof(char) * ft_strwlen((wchar_t *) arg) + 1);
+		res = (char *)malloc(sizeof(char) * ft_strwlen((wchar_t *)arg) + 1);
 		while (tp[i])
 		{
 			res[i] = tp[i];
