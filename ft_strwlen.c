@@ -12,6 +12,7 @@
 
 #include "ft_printf.h"
 
+
 int		ft_charsize(int c)
 {
 	char 	*b;
@@ -39,4 +40,18 @@ int		ft_strwlen(wchar_t *s)
 		s++;
 	}
 	return (i);
+}
+
+int		is_str(wchar_t *s)
+{
+	int		size;
+	int		i;
+
+	i = 0;
+	size = ft_strwlen(s);
+	while (s[i])
+		i++;
+	if (i == size)
+		return (1);
+	return (0);
 }

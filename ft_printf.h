@@ -91,5 +91,7 @@ int			ft_binary_to_dec(char *pd);
 char		*ft_arg_is_zero(void);
 int			ft_strwlen(wchar_t *s);
 int			ft_charsize(int c);
+int			is_str(wchar_t *s);
+char		*ft_strchoice(void *arg, char c);
 
 #endif

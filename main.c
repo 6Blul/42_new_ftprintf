@@ -18,7 +18,7 @@ int 	main(void)
 	//ft_printf("%S", L"لحم خنزير");
 	//ft_printf("%s %C %d %p %x %% %S", "bonjour ", L'該', 42, &free, 42, L"لحم خنزير");
 	//ft_printf("%C", L'猫');
-	ft_printf("%C", L'猫');
+	/*ft_printf("%C", L'猫');
 	printf("\n");
 	ft_printf("%C", L'δ');
 	printf("\n");
@@ -49,6 +49,7 @@ int 	main(void)
 	printf("%i", L'莨');
 	printf("\n");
 	printf("%i", L'ي');
-	printf("\n");
+	printf("\n");*/
+	ft_printf("{% S}", L"grodp");
 	return (0);
 }
