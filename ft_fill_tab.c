@@ -89,14 +89,15 @@ int		*fill_uiflags(int *tab, char *fmt, unsigned int arg)
 
 int		*fill_vflags(int *tab, char *fmt)
 {
-	ft_bzero(tab, 2);
+	ft_bzero(tab, 3);
 	while (is_convers_flag(*(fmt++)) == 0)
 	{
 		if (*fmt == '.')
 			tab[0] = 1;
 		if (*fmt == '-')
 			tab[2] = 1;
-	}
+		if (*fmt == '0' && !ft_isdigit(*(fmt - 1)) && tab[0] == 0)
+			tab[3] = 1;}
 	tab[1] = is_lm(fmt);
 	return (tab);
 }

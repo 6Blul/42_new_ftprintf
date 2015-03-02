@@ -50,6 +50,13 @@ int 	main(void)
 	printf("\n");
 	printf("%i", L'ي');
 	printf("\n");*/
-	ft_printf("{% S}", L"grodp");
+	//ft_printf("{% S}", L"grodp");
+	/*ft_printf("{%-12Z}", 245);
+	printf("\n");
+	printf("{%-12Z}", 245);
+	printf("\n");
+	ft_printf("%Z", 245);
+	printf("\n");
+	printf("%Z", 245);*/
 	return (0);
 }
